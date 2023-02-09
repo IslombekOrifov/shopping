@@ -1,0 +1,168 @@
+{% extends 'accounts/seller/seller_base.html' %}
+{% load static %}
+
+{% block title %}Products{% endblock %}
+
+{% block style %}
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="{% static 'seller/plugins/fontawesome-free/css/all.min.css' %}">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="{% static 'seller/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css' %}">
+  <link rel="stylesheet" href="{% static 'seller/plugins/datatables-responsive/css/responsive.bootstrap4.min.css' %}">
+  <link rel="stylesheet" href="{% static 'seller/plugins/datatables-buttons/css/buttons.bootstrap4.min.css' %}">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{% static 'seller/dist/css/adminlte.min.css' %}">
+{% endblock style %}
+
+{% block content %}
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>DataTables</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Products</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            
+            <div class="card">
+              <div class="card-header">
+                <h3 class="d-inline card-title">DataTable with minimal features & hover style <a href="{% url 'products:product_create' %}" class="btn btn-block btn-success">Add New product</a></h3>
+                
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table id="example2" class="table table-bordered table-hover">
+                  <thead>
+                  <tr>
+                    <th>Title</th>
+                    <th>Category</th>
+                    <th>Author</th>
+                    <th>Items quantity</th>
+                    <th>Active</th>
+                    <th>Archive</th>
+                    <th>Buttons</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  {% for product in products %}
+                    <tr>
+                      <td>{{ product.title }}</td>
+                      <td>{{ product.category }}</td>
+                      <td>{{ product.slug }}</td>
+                      <td>{{ product.brand }}</td>
+                      <td>{{ product.items_count }}</td>
+                      <td>{{ product.is_active }}</td>
+                      <td>{{ product.is_archive }}</td>
+                      <td> <a class="btn btn-primary btn-sm" href="{% url 'products:product_detail_seller' product.slug %}"> 
+                          <i class="fas fa-folder"></i>View</a>
+                          <a class="btn btn-info btn-sm" href="#">
+                              <i class="fas fa-pencil-alt"></i>Edit
+                          </a>
+                          <a class="btn btn-danger btn-sm" href="#">
+                              <i class="fas fa-trash"></i>Delete
+                          </a>
+                      </td>
+                    </tr>
+                  {% empty %}
+                    <tr>
+                      <td>---</td>
+                      <td>---</td>
+                      <td>---</td>
+                      <td>---</td>
+                      <td>---</td>
+                      <td>---</td>
+                      <td>---</td>
+                      <td>---</td>
+                    </tr>
+                  {% endfor %}
+                  
+                  </tbody>
+                  <tfoot>
+                  <tr>
+                    <th>Rendering engine</th>
+                    <th>Browser</th>
+                    <th>Platform(s)</th>
+                    <th>Engine version</th>
+                    <th>CSS grade</th>
+                    <th>CSS grade</th>
+                    <th>CSS grade</th>
+                    <th>CSS grade</th>
+                  </tr>
+                  </tfoot>
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+{% endblock content %}
+
+{% block scripts %}
+<!-- jQuery -->
+<script src="{% static 'seller/plugins/jquery/jquery.min.js' %}"></script>
+<!-- Bootstrap 4 -->
+<script src="{% static 'seller/plugins/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<!-- DataTables  & Plugins -->
+<script src="{% static 'seller/plugins/datatables/jquery.dataTables.min.js' %}"></script>
+<script src="{% static 'seller/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js' %}"></script>
+<script src="{% static 'seller/plugins/datatables-responsive/js/dataTables.responsive.min.js' %}"></script>
+<script src="{% static 'seller/plugins/datatables-responsive/js/responsive.bootstrap4.min.js' %}"></script>
+<script src="{% static 'seller/plugins/datatables-buttons/js/dataTables.buttons.min.js' %}"></script>
+<script src="{% static 'seller/plugins/datatables-buttons/js/buttons.bootstrap4.min.js' %}"></script>
+<script src="{% static 'seller/plugins/jszip/jszip.min.js' %}"></script>
+<script src="{% static 'seller/plugins/pdfmake/pdfmake.min.js' %}"></script>
+<script src="{% static 'seller/plugins/pdfmake/vfs_fonts.js' %}"></script>
+<script src="{% static 'seller/plugins/datatables-buttons/js/buttons.html5.min.js' %}"></script>
+<script src="{% static 'seller/plugins/datatables-buttons/js/buttons.print.min.js' %}"></script>
+<script src="{% static 'seller/plugins/datatables-buttons/js/buttons.colVis.min.js' %}"></script>
+<!-- AdminLTE App -->
+<script src="{% static 'seller/dist/js/adminlte.min.js' %}"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="{% static 'seller/dist/js/demo.js' %}"></script>
+<!-- Page specific script -->
+<script>
+  $(function () {
+    $("#example1").DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    });
+  });
+</script>
+{% endblock scripts %}
+

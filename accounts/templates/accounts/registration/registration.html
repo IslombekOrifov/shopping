@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% load i18n %}
+{% load widget_tweaks %}
+
+{% block title %}{% translate 'Log in' %}{% endblock title %}
+
+{% block content %}
+    <!-- ========== MAIN CONTENT ========== -->
+    <main id="content" role="main">
+        <!-- breadcrumb -->
+        <div class="bg-gray-13 bg-md-transparent">
+            <div class="container">
+                <!-- breadcrumb -->
+                <div class="my-md-3">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb mb-3 flex-nowrap flex-xl-wrap overflow-auto overflow-xl-visble">
+                            <li class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1"><a href="../home/index.html">{% translate 'Home' %}</a></li>
+                            <li class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1 active" aria-current="page">{% translate 'Registration' %}</li>
+                        </ol>
+                    </nav>
+                </div>
+                <!-- End breadcrumb -->
+            </div>
+        </div>
+        <!-- End breadcrumb -->
+
+        <div class="container">
+            <div class="mb-4">
+                <h1 class="text-center">{% translate 'Register' %}</h1>
+            </div>
+            <div class="my-4 my-xl-8">
+                <div class="row">
+                    <div class="col-md-5 ml-md-auto ml-xl-auto mr-xl-auto">
+                        <!-- Title -->
+                        <div class="border-bottom border-color-1 mb-6">
+                            <h3 class="d-inline-block section-title mb-0 pb-2 font-size-26">{% translate 'Registration' %}
+                        <p class="text-gray-90 mb-4">Welcome back! Sign in to your account.</p>
+                        <!-- End Title -->
+                        <form class="js-validate" novalidate="novalidate" action="{% url 'account:login' %}" method='post'>
+                            <!-- Form Group -->
+                            {% csrf_token %}
+                            <div class="js-form-message form-group">
+                                {% if form.non_field_errors %}
+                                <div id="error" class="invalid-feedback" style="display: block;"><p class="invalid-feedback mb-4">{{form.non_field_errors}}</p></div>
+                                {% endif %}
+                                <label class="form-label" for="id_username">{% translate 'Username' %}
+                                    <span class="text-danger">*</span>
+                                </label>                              
+                                {% render_field form.username type="text" class="form-control"  placeholder="Username or Email address" aria-label="Username or Email address" data-msg="Please enter a valid email address." data-error-class="u-has-error" data-success-class="u-has-success" %}
+                                {% if form.username.errors %}<div id="id_username-error" class="invalid-feedback" style="display: block;">{{ form.username.errors }}</div>{% endif %}
+                            </div>
+                            <!-- End Form Group -->
+                            <!-- Form Group -->
+                            <div class="js-form-message form-group">
+                                <label class="form-label" for="id_password">{% translate 'Email' %} <span class="text-danger">*</span></label>
+                                {% render_field form.password type="password" class="form-control" name="password" id="id_password" placeholder="Password" aria-label="Password" data-msg="Your password is invalid. Please try again." data-error-class="u-has-error" data-success-class="u-has-success"%}
+                                {% if form.password.errors %}<div id="id_password-error" class="invalid-feedback" style="display: block;">{{ form.username.errors }}</div>{% endif %}
+                                {% comment %} <input type="password" class="form-control" name="password" id="signinSrPasswordExample2" placeholder="Password" aria-label="Password" required
+                                data-msg="Your password is invalid. Please try again."
+                                data-error-class="u-has-error"
+                                data-success-class="u-has-success"> {% endcomment %}
+                            </div>
+                            <!-- End Form Group -->
+                            <!-- Form Group -->
+                            <div class="js-form-message form-group">
+                                <label class="form-label" for="id_password">{% translate 'Password' %} <span class="text-danger">*</span></label>
+                                {% render_field form.password type="password" class="form-control" name="password" id="id_password" placeholder="Password" aria-label="Password" data-msg="Your password is invalid. Please try again." data-error-class="u-has-error" data-success-class="u-has-success"%}
+                                {% if form.password.errors %}<div id="id_password-error" class="invalid-feedback" style="display: block;">{{ form.username.errors }}</div>{% endif %}
+                                {% comment %} <input type="password" class="form-control" name="password" id="signinSrPasswordExample2" placeholder="Password" aria-label="Password" required
+                                data-msg="Your password is invalid. Please try again."
+                                data-error-class="u-has-error"
+                                data-success-class="u-has-success"> {% endcomment %}
+                            </div>
+                            <!-- End Form Group -->
+                            <!-- Form Group -->
+                            <div class="js-form-message form-group">
+                                <label class="form-label" for="id_password">{% translate 'Confirm password' %} <span class="text-danger">*</span></label>
+                                {% render_field form.password type="password" class="form-control" name="password" id="id_password" placeholder="Password" aria-label="Password" data-msg="Your password is invalid. Please try again." data-error-class="u-has-error" data-success-class="u-has-success"%}
+                                {% if form.password.errors %}<div id="id_password-error" class="invalid-feedback" style="display: block;">{{ form.username.errors }}</div>{% endif %}
+                                {% comment %} <input type="password" class="form-control" name="password" id="signinSrPasswordExample2" placeholder="Password" aria-label="Password" required
+                                data-msg="Your password is invalid. Please try again."
+                                data-error-class="u-has-error"
+                                data-success-class="u-has-success"> {% endcomment %}
+                            </div>
+                            <!-- End Form Group -->
+                            <!-- Button -->
+                            <div class="mb-1">
+                                <div class="mb-3">
+                                    <button type="submit" class="btn btn-primary-dark-w px-5">{% translate 'Log in' %}</button>
+                                </div>
+                                <div class="mb-2">
+                                    <a class="text-blue" href="{% url 'account:password_reset' %}">Lost your password?</a>
+                                </div>
+                            </div>
+                            <!-- End Button -->
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- ========== END MAIN CONTENT ========== -->
+
+{% endblock content %}
+

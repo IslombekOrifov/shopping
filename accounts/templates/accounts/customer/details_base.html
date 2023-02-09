@@ -1,0 +1,150 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}Account{% endblock title %}
+
+{% block content %}
+<!-- ========== MAIN CONTENT ========== -->
+<main id="content" role="main">
+    <!-- breadcrumb -->
+    <div class="bg-gray-13 bg-md-transparent">
+        <div class="container">
+            <!-- breadcrumb -->
+            <div class="my-md-3">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb mb-3 flex-nowrap flex-xl-wrap overflow-auto overflow-xl-visble">
+                        <li class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1"><a href="{% url 'general:index' %}">Home</a></li>
+                        <li class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1 active" aria-current="page">Account</li>
+                    </ol>
+                </nav>
+            </div>
+            <!-- End breadcrumb -->
+        </div>
+    </div>
+    <!-- End breadcrumb -->
+
+    <div class="container">
+        <div class="row mb-8">
+            <div class="d-none d-xl-block col-xl-3 col-wd-2gdot5">
+                <div class="mb-6 border border-width-2 border-color-3 borders-radius-6">
+                    <!-- List -->
+                    <ul id="sidebarNav" class="list-unstyled mb-0 sidebar-navbar view-all">
+                        <li>
+                            <ul id="sidebarNav1" class="list-unstyled dropdown-list">
+                                <!-- Menu List -->
+                                <li><a class="{% if section == 'dashboard' %}dropdown-current active{% else %}dropdown-item{% endif %}" href="{% url 'accounts:dashboard' %}">Dashboard</a></li>
+                                <li><a class="{% if section == 'details' %}dropdown-current active{% else %}dropdown-item{% endif %}" href="{% url 'accounts:details' %}">Account Details</a></li>
+                                <li><a class="{% if section == 'password_change' %}dropdown-current active{% else %}dropdown-item{% endif %}" href="{% url 'accounts:password_change' %}">Password Change</a></li>
+                                <li><a class="{% if section == 'orders' %}dropdown-current active{% else %}dropdown-item{% endif %}" href="{% url 'accounts:orders' %}">Orders</a></li>
+                                <li><a class="{% if section == 'wishlist' %}dropdown-current active{% else %}dropdown-item{% endif %}" href="{% url 'accounts:wishlist' %}">Wishlist</a></li>
+                                <li><a class="{% if section == 'cart' %}dropdown-current active{% else %}dropdown-item{% endif %}" href="{% url 'accounts:carts' %}">Cart</a></li>
+                                <!-- End Menu List -->
+                            </ul>
+                        </li>
+                    </ul>
+                    <!-- End List -->
+                </div>
+            </div>
+            <div class="col-xl-9 col-wd-9gdot5">
+                <!-- Shop-control-bar -->
+                <div class="bg-gray-1 flex-center-between borders-radius-9 py-1">
+                    <div class="d-xl-none">
+                        <!-- Account Sidebar Toggle Button -->
+                        <a id="sidebarNavToggler1" class="btn btn-sm py-1 font-weight-normal" href="javascript:;" role="button"
+                            aria-controls="sidebarContent1"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                            data-unfold-event="click"
+                            data-unfold-hide-on-scroll="false"
+                            data-unfold-target="#sidebarContent1"
+                            data-unfold-type="css-animation"
+                            data-unfold-animation-in="fadeInLeft"
+                            data-unfold-animation-out="fadeOutLeft"
+                            data-unfold-duration="500">
+                            <i class="fas fa-sliders-h"></i> <span class="ml-1">Account menus</span>
+                        </a>
+                        <!-- End Account Sidebar Toggle Button -->
+                    </div>
+                    <div class="px-3 d-none d-xl-block">
+                        <ul class="nav nav-tab-shop" id="pills-tab" role="tablist">
+                        </ul>
+                    </div>
+                    <div class="d-flex">
+                        <form method="get">
+                            <!-- Select -->
+                            <select class="js-select selectpicker dropdown-select max-width-200 max-width-160-sm right-dropdown-0 px-2 px-xl-0"
+                                data-style="btn-sm bg-white font-weight-normal py-2 border text-gray-20 bg-lg-down-transparent border-lg-down-0">
+                                <option value="one" selected>Default sorting</option>
+                                <option value="two">Sort by popularity</option>
+                                <option value="three">Sort by average rating</option>
+                                <option value="four">Sort by latest</option>
+                                <option value="five">Sort by price: low to high</option>
+                                <option value="six">Sort by price: high to low</option>
+                            </select>
+                            <!-- End Select -->
+                        </form>
+                    </div>
+                </div>
+                <!-- End Shop-control-bar -->
+                {% block account_elements %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+</main>
+<!-- ========== END MAIN CONTENT ========== -->
+
+<!-- Sidebar Navigation -->
+<aside id="sidebarContent1" class="u-sidebar u-sidebar--left" aria-labelledby="sidebarNavToggler1">
+    <div class="u-sidebar__scroller">
+        <div class="u-sidebar__container">
+            <div class="">
+                <!-- Toggle Button -->
+                <div class="d-flex align-items-center pt-3 px-4 bg-white">
+                    <button type="button" class="close ml-auto"
+                        aria-controls="sidebarContent1"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                        data-unfold-event="click"
+                        data-unfold-hide-on-scroll="false"
+                        data-unfold-target="#sidebarContent1"
+                        data-unfold-type="css-animation"
+                        data-unfold-animation-in="fadeInLeft"
+                        data-unfold-animation-out="fadeOutLeft"
+                        data-unfold-duration="500">
+                        <span aria-hidden="true"><i class="ec ec-close-remove"></i></span>
+                    </button>
+                </div>
+                <!-- End Toggle Button -->
+
+                <!-- Content -->
+                <div class="js-scrollbar u-sidebar__body">
+                    <div class="u-sidebar__content u-header-sidebar__content px-4">
+                        <div class="mb-6 border border-width-2 border-color-3 borders-radius-6">
+                            <!-- List -->
+                            <ul id="sidebarNav" class="list-unstyled mb-0 sidebar-navbar view-all">
+                                <li>
+                                    <ul class="list-unstyled dropdown-list">
+                                        <!-- Menu List -->
+                                        <li><a class="{% if section == 'dashboard' %}dropdown-current active{% else %}dropdown-item{% endif %}" href="{% url 'accounts:dashboard' %}">Dashboard</a></li>
+                                        <li><a class="{% if section == 'details' %}dropdown-current active{% else %}dropdown-item{% endif %}" href="{% url 'accounts:details' %}">Account Details</a></li>
+                                        <li><a class="{% if section == 'password_change' %}dropdown-current active{% else %}dropdown-item{% endif %}" href="{% url 'accounts:password_change' %}">Password Change</a></li>
+                                        <li><a class="{% if section == 'orders' %}dropdown-current active{% else %}dropdown-item{% endif %}" href="{% url 'accounts:orders' %}">Orders<span class="text-gray-25 font-size-12 font-weight-normal"> (22)</span></a></li>
+                                        <li><a class="{% if section == 'wishlist' %}dropdown-current active{% else %}dropdown-item{% endif %}" href="{% url 'accounts:wishlist' %}">Wishlist<span class="text-gray-25 font-size-12 font-weight-normal"> (5)</span></a></li>
+                                        <li><a class="{% if section == 'wishlist' %}dropdown-current active{% else %}dropdown-item{% endif %}" href="#">Cart<span class="text-gray-25 font-size-12 font-weight-normal"> (7)</span></a></li>
+
+                                    </ul>
+                                </li>
+                            </ul>
+                            <!-- End List -->
+                        </div>
+                    </div>
+                </div>
+                <!-- End Content -->
+            </div>
+        </div>
+    </div>
+</aside>
+<!-- End Sidebar Navigation -->
+{% endblock content %}

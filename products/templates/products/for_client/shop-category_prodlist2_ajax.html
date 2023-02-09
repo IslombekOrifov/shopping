@@ -1,0 +1,54 @@
+{% load static %}
+{% load blog_tags %}
+
+{% for item in product_items %}
+    <li class="col-6 col-md-3 product-item">
+        <div class="product-item__outer h-100">
+            <div class="product-item__inner px-xl-4 p-3">
+                <div class="product-item__body pb-xl-2">
+                    <div class="mb-2"><a href="{{ item.product.category.get_absolute_url }}" class="font-size-12 text-gray-5">{{ item.product.category.title }}</a></div>
+                    <h5 class="mb-1 product-item__title"><a href="{{ item.get_absolute_url }}" class="text-blue font-weight-bold">{{ item.title|truncatewords:6|linebreaks }}</a></h5>
+                    <div class="mb-2">
+                        <a href="{{ item.get_absolute_url }}" class="d-block text-center"><img class="img-fluid" src="{% get_media_prefix %}{{ item.image }}" alt="Image Description"></a>
+                    </div>
+                    <div class="mb-3">
+                        <a class="d-inline-flex align-items-center small font-size-14" href="#">
+                            <div class="text-warning mr-2">
+                                <small class="fas fa-star"></small>
+                                <small class="fas fa-star"></small>
+                                <small class="fas fa-star"></small>
+                                <small class="fas fa-star"></small>
+                                <small class="far fa-star text-muted"></small>
+                            </div>
+                            <span class="text-secondary">(40)</span>
+                        </a>
+                    </div>
+                    <div class="text-gray-20 mb-2 font-size-12"><strong>Brand:</strong> {{ item.product.brand.name }}</div>
+                    <div class="text-gray-20 mb-2 font-size-12"><strong>Model:</strong> {{ item.model }}</div>
+                    <div class="text-gray-20 mb-2 font-size-12"><strong>Available:</strong> {{ item.count_in_stock }}</div>
+                    <div class="flex-center-between mb-1">
+                        <div class="prodcut-price">
+                            {% if item.price_discount %}
+                                <del class="font-size-14 text-gray-9 d-block">{{ item.price_currency|price_change }} {{ currency }}</del>
+                                <ins class="font-size-15 text-red text-decoration-none d-block">{{ item.price_discount|price_change }} {{ currency }}</ins>
+                            {% else %}
+                                <div class="text-gray-100">{{ item.price_currency|price_change }} {{ currency }}</div>
+                            {% endif %}
+                        </div>
+                        <div class="d-none d-xl-block prodcut-add-cart">
+                            <a href="{% url 'carts:cart_add' item.id %}" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-item__footer">
+                    <div class="border-top pt-2 flex-center-between flex-wrap">
+                        <a href="../shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
+                        <a href="{% url 'wishlists:add' item.slug %}" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Wishlist</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+{% empty %}
+{% endfor %}
+

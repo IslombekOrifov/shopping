@@ -1,0 +1,113 @@
+{% extends 'accounts/customer/details_base.html' %}
+{% load widget_tweaks %}
+
+{% block account_elements %}
+    <!-- Shop Body -->
+    <div class="col-lg-12 order-lg-1">
+        <div class="pb-7 mb-7">
+            <!-- Title -->
+            <div class="border-bottom border-color-1 mb-5">
+                
+            </div>
+            <!-- End Title -->
+            <!-- Billing Form -->
+            <div class="row">
+                <form class="col-12 d-flex flex-wrap" method='post'>
+                    <div class="col-md-6">
+                        <!-- Input -->
+                        <div class="js-form-message mb-6">
+                            <label class="form-label">
+                                Username
+                                <span class="text-danger">*</span>
+                            </label>
+                            {% render_field user_form.username type='text' class="form-control" aria-label="Jack" data-error-class="u-has-error" %}
+                            {% if user_form.username.errors %}<div id="id_username-error" class="invalid-feedback" style="display: block;">{{ user_form.username.errors }}</div>{% endif %}
+                        </div>
+                        <!-- End Input -->
+                    </div>
+
+                    <div class="col-md-6">
+                        <!-- Input -->
+                        <div class="js-form-message mb-6">
+                            <label class="form-label">
+                                Email address
+                                <span class="text-danger">*</span>
+                            </label>
+                            {% render_field user_form.email type='email' class="form-control" aria-label="Jack" data-error-class="u-has-error" %}
+                            {% if user_form.email.errors %}<div id="id_email-error" class="invalid-feedback" style="display: block;">{{ user_form.email.errors }}</div>{% endif %}
+                        </div>
+                        <!-- End Input -->
+                    </div>
+                    <div class="col-md-6">
+                        <!-- Input -->
+                        <div class="js-form-message mb-6">
+                            <label class="form-label">
+                                First name
+                            </label>
+                            {% render_field user_form.first_name type='text' class="form-control" aria-label="Jack" data-error-class="u-has-error" %}
+                            {% if user_form.first_name.errors %}<div id="id_first_name-error" class="invalid-feedback" style="display: block;">{{ user_form.first_name.errors }}</div>{% endif %}   
+                        </div>
+                        <!-- End Input -->
+                    </div>
+                    <div class="col-md-6">
+                        <!-- Input -->
+                        <div class="js-form-message mb-6">
+                            <label class="form-label">
+                                Email                           
+                            </label>
+                            {% render_field user_form.last_name type='text' class="form-control" aria-label="Jack" data-error-class="u-has-error" %}
+                            {% if user_form.last_name.errors %}<div id="id_last_name-error" class="invalid-feedback" style="display: block;">{{ user_form.last_name.errors }}</div>{% endif %}
+                        </div>
+                        <!-- End Input -->
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <!-- Input -->
+                        <div class="js-form-message mb-6">
+                            <label class="form-label">
+                                Phone
+                            </label>
+                            {% render_field profile_form.phone type='text' class="form-control" aria-label="Jack" data-error-class="u-has-error" %}
+                            {% if profile_form.phone.errors %}<div id="id_phone-error" class="invalid-feedback" style="display: block;">{{ profile_form.phone.errors }}</div>{% endif %}
+                        </div>
+                        <!-- End Input -->
+                    </div>
+
+                    <div class="col-md-4">
+                        <!-- Input -->
+                        <div class="js-form-message mb-6">
+                            <label class="form-label">
+                                Currency
+                            </label>
+                            {% render_field user_form.currency type='choice' class="form-control" aria-label="Jack" data-error-class="u-has-error" %}
+                            {% if profile_form.old_password.errors %}<div id="id_old_password-error" class="invalid-feedback" style="display: block;">{{ profile_form.currency.errors }}</div>{% endif %}
+                        </div>
+                        <!-- End Input -->
+                    </div>
+
+                    <div class="col-md-4">
+                        <!-- Input -->
+                        <div class="js-form-message mb-6">
+                            <label class="form-label">
+                                Date of birth &nbsp;&nbsp;({{ profile_form.date_of_birth.value }})
+                            </label>
+                            {% render_field profile_form.date_of_birth type='date' class="form-control" aria-label="Jack" data-error-class="u-has-error" defaultValue=profile_form.date_of_birth.value%}
+                            {% if pass_form.date_of_birth.errors %}<div id="id_date_of_birth-error" class="invalid-feedback" style="display: block;">{{ pass_form.date_of_birth.errors }}</div>{% endif %}
+                        </div>
+                        <!-- End Input -->
+                    </div>
+                    {% csrf_token %}
+                    <div class="col-md-12">
+                        <!-- Input -->
+                        <div class="js-form-message mb-6 align-self-center">
+                            <input type='submit' class="btn btn-sm btn-block btn-primary-dark btn-wide transition-3d-hover form-control " aria-label="Jack" value='Submit'>
+                        </div>
+                        <!-- End Input -->
+                    </div>  
+                </form>       
+            </div>
+            <!-- End Billing Form -->            
+        </div>
+    </div>
+    <!-- End Shop Body -->
+{% endblock %}

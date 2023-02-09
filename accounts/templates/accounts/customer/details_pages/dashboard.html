@@ -1,0 +1,49 @@
+{% extends 'accounts/customer/details_base.html' %}
+{% load blog_tags %}
+
+{% block account_elements %}
+    <div class="tab-pane fade pt-2 show active" id="pills-three-example1" role="tabpanel" aria-labelledby="pills-three-example1-tab" data-target-group="groups">
+        <ul class="d-block list-unstyled products-group prodcut-list-view">
+            <div class="mb-4">
+                <h3 class="">Dashboard</h3>
+            </div>
+            {% if profile.image %}
+                <div class="mb-2">
+                    <a class="d-block"><img class="img-fluid" src="{{ profile.image.url}}" alt="There should be image :)"></a>
+                </div>
+            {% endif %}
+            <table id="example2" class="table table-bordered table-hover">
+                
+                <tr>
+                    <th>Username</th>
+                    <td>{{ request.user.username }}</td>
+                </tr>
+                <tr>
+                    <th>First name</th>
+                    <td>{{ request.user.first_name }}</td>
+                </tr>
+                <tr>
+                    <th>Last name</th>
+                    <td>{{ request.user.last_name }}</td>
+                </tr>
+                <tr>
+                    <th>Email</th>
+                    <td>{{ request.user.email|linebreaks }}</td>
+                </tr>
+                <tr>
+                    <th>Currency</th>
+                    <td>{{ request.user.currency }}</td>
+                </tr>
+                <tr>
+                    <th>Date of birth</th>
+                    <td>{{ profile.date_of_birth }}</td>
+                </tr>
+                <tr>
+                    <th>Phone</th>
+                    <td>{{ profile.phone }}</td>
+                </tr>
+                
+            </table>
+        </ul>
+    </div>
+{% endblock %}

@@ -1,0 +1,121 @@
+{% extends 'accounts/customer/details_base.html' %}
+{% load blog_tags %}
+
+{% block account_elements %}
+    <div class="tab-pane fade pt-2 show active" id="pills-three-example1" role="tabpanel" aria-labelledby="pills-three-example1-tab" data-target-group="groups">
+        <ul class="d-block list-unstyled products-group prodcut-list-view">
+            <div class="mb-4">
+                <h3 class="">Order</h3>
+            </div>
+            <table id="example2" class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                  <th>Order ID</th>
+                  <th>Total Price</th>
+                  <th>Phone</th>
+                  <th>Status</th>
+                  <th>Confirm</th>
+                  <th>Created</th>
+                  <th>Buttons</th>
+                </tr>
+                </thead>
+                <tbody>
+                    
+                        <tr>
+                        <td>#{{ order.slug }}</td>
+                        <td>{{ order.price_currency|price_change }} {{ currency }}</td>
+                        <td>{{ order.phone }}</td>
+                        <td>{{ order.get_status_display }}</td>
+                        <td>X</td>
+                        <td>{{ order.created|date:'SHORT_DATE_FORMAT' }}</td>
+                        <td> 
+                            {% if not order.is_paid %}
+                            <a class="btn btn-info btn-sm" href="#">
+                                <i class="fas fa-pencil-alt"></i>Edit
+                            </a>
+                            <a class="btn btn-danger btn-sm" href="{% url 'orders:delete' order.slug %}">
+                                <i class="fas fa-trash"></i>Delete
+                            </a>
+                            {% endif %}
+                        </td>
+                        </tr>
+
+                </tbody>
+                <tfoot>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Total Price</th>
+                    <th>Phone</th>
+                    <th>Status</th>
+                    <th>Confirm</th>
+                    <th>Created</th>
+                    <th>Buttons</th>
+                </tr>
+                </tfoot>
+            </table>
+            <div class="mb-4">
+                <h3 class="">Order Items</h3>
+            </div>
+            <table id="example2" class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Discount</th>
+                    <th>Price with discount</th>
+                    <th>Total Price</th>
+                    <th>Created</th>
+                    {% if not order.is_paid %}
+                        <th>Buttons</th>
+                    {% endif%}
+                </tr>
+                </thead>
+                <tbody>
+                    {% for item in order.items.all %}
+                        {% with item.price * item.quantity as total_price%}
+                            <tr>
+                            <td>#{{ item.product_item }}</td>
+                            {% comment %} <td>{{ order.price_currency|price_change }} {{ currency }}</td> {% endcomment %}
+                            <td>{{ item.quantity }}</td>
+                            <td>{{ item.price }}</td>
+                            {% if item.discount_price %}
+                                <td>+</td>
+                                <td>{{ item.discount_price }}</td>
+                                <td>{{ item. }}</td>
+                            {% else %}
+                                <td>-</td>
+                                <td>{{ item.price }}</td>
+                            {% endif %}
+                            
+                            <td>{{ order.created|date:'SHORT_DATE_FORMAT' }}</td>
+                            <td> 
+                                {% if not order.is_paid %}
+                                <a class="btn btn-info btn-sm" href="#">
+                                    <i class="fas fa-pencil-alt"></i>Edit
+                                </a>
+                                {% comment %} <a class="btn btn-danger btn-sm" href="{% url 'orders:delete' order.slug %}"> {% endcomment %}
+                                    <i class="fas fa-trash"></i>Delete
+                                </a>
+                                {% endif %}
+                            </td>
+                            </tr>
+                            {% endwith %}
+                    {% endfor %}
+
+                </tbody>
+                <tfoot>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Total Price</th>
+                    <th>Phone</th>
+                    <th>Status</th>
+                    <th>Confirm</th>
+                    <th>Created</th>
+                    <th>Buttons</th>
+                </tr>
+                </tfoot>
+            </table>
+        </ul>
+    </div>
+{% endblock %}

@@ -1,0 +1,178 @@
+{% load blog_tags %}
+
+<div class="row no-gutters">
+    <div class="col-md-3 col-wd-4 d-md-flex d-wd-block">
+        <ul class="row list-unstyled products-group no-gutters mb-0 flex-xl-column flex-wd-row">
+            {% for item in product_items|slice:':4'%}
+                <li class="col-xl-6 product-item max-width-xl-100 remove-divider">
+                    <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
+                        <div class="product-item__inner bg-white p-3">
+                            <div class="product-item__body pb-xl-2">
+                                <div class="mb-2"><a href="{{ item.product.category.get_obsolute_url }}" class="font-size-12 text-gray-5">{{ item.product.category.title }}</a></div>
+                                <h5 class="mb-1 product-item__title"><a href="{{ item.get_obsolute_url }}" class="text-blue font-weight-bold">{{ item.title }}</a></h5>
+                                <div class="mb-2">
+                                    <a href="{{ item.get_absolute_url}}" class="d-block text-center"><img class="img-fluid" src="media/{{ item.image }}" alt="Image Description"></a>
+                                </div>
+                                <div class="flex-center-between mb-1">
+                                    <div class="prodcut-price">
+                                        {% if item.price_discount %}
+                                            <del class="font-size-18 tex-gray-6 bottom-100 d-block">{{ item.price_currency|price_change }} {{ currency }}</del>
+                                            <ins class="font-size-20 text-red text-decoration-none d-block">{{ item.price_discount|price_change }} {{ currency }}</ins>
+                                        {% else %}
+                                            <div class="text-gray-100">{{ item.price_currency|price_change }} {{ currency }}</div>
+                                        {% endif %}
+                                    </div>
+                                    <div class="d-none d-xl-block prodcut-add-cart">
+                                        <a href="{% url 'carts:cart_add' item.id %}" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-item__footer">
+                                <div class="border-top pt-2 flex-center-between flex-wrap">
+                                    <a href="../shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
+                                    <a href="{% url 'wishlists:add' item.slug %}" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            {% empty %}
+            {% endfor %}
+        </ul>
+    </div>
+
+    {% for item in product_items|slice:'4:5'%}
+        <div class="col-md-6 col-wd-4 products-group-1">
+            <ul class="row list-unstyled products-group no-gutters bg-white h-100 mb-0">
+                <li class="col product-item remove-divider">
+                    <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
+                        <div class="product-item__inner bg-white p-3">
+                            <div class="product-item__body d-flex flex-column">
+                                <div class="mb-1">
+                                    <div class="mb-2"><a href="{{ item.product.category.get_obsolute_url }}" class="font-size-12 text-gray-5">{{ item.product.category.title }}</a></div>
+                                    <h5 class="mb-0 product-item__title"><a href="{{ item.get_obsolute_url }}" class="text-blue font-weight-bold">{{ item.title }}</a></h5>
+                                </div>
+                                <div class="mb-1 min-height-4-1-4">
+                                    <a href="{{ item.get_absolute_url }}" class="d-block text-center my-4 mt-lg-6 mb-lg-5 mt-xl-0 mb-xl-0 mt-wd-6 mb-wd-5"><img class="img-fluid" src="media/{{ item.image }}" alt="Image Description"></a>
+                                    <!-- Gallery -->
+                                    <div class="row mx-gutters-2 mb-3">
+                                        <div class="col-auto">
+                                            <!-- Gallery -->
+                                            <a class="js-fancybox max-width-60 u-media-viewer" href="javascript:;"
+                                                data-src="../../assets/img/1920X1080/img1.jpg"
+                                                data-fancybox="fancyboxGallery6"
+                                                data-caption="Electro in frames - image #01"
+                                                data-speed="700"
+                                                data-is-infinite="true">
+                                                <img class="img-fluid border" src="../../assets/img/100X100/img1.jpg" alt="Image Description">
+
+                                                <span class="u-media-viewer__container">
+                                                    <span class="u-media-viewer__icon">
+                                                        <span class="fas fa-plus u-media-viewer__icon-inner"></span>
+                                                    </span>
+                                                </span>
+                                            </a>
+                                            <!-- End Gallery -->
+                                        </div>
+
+                                        <div class="col-auto">
+                                            <!-- Gallery -->
+                                            <a class="js-fancybox max-width-60 u-media-viewer" href="javascript:;"
+                                                data-src="../../assets/img/1920X1080/img2.jpg"
+                                                data-fancybox="fancyboxGallery6"
+                                                data-caption="Electro in frames - image #02"
+                                                data-speed="700"
+                                                data-is-infinite="true">
+                                                <img class="img-fluid border" src="../../assets/img/100X100/img2.jpg" alt="Image Description">
+
+                                                <span class="u-media-viewer__container">
+                                                    <span class="u-media-viewer__icon">
+                                                        <span class="fas fa-plus u-media-viewer__icon-inner"></span>
+                                                    </span>
+                                                </span>
+                                            </a>
+                                            <!-- End Gallery -->
+                                        </div>
+
+                                        <div class="col-auto">
+                                            <!-- Gallery -->
+                                            <a class="js-fancybox max-width-60 u-media-viewer" href="javascript:;"
+                                                data-src="../../assets/img/1920X1080/img3.jpg"
+                                                data-fancybox="fancyboxGallery6"
+                                                data-caption="Electro in frames - image #03"
+                                                data-speed="700"
+                                                data-is-infinite="true">
+                                                <img class="img-fluid border" src="../../assets/img/100X100/img3.jpg" alt="Image Description">
+
+                                                <span class="u-media-viewer__container">
+                                                    <span class="u-media-viewer__icon">
+                                                        <span class="fas fa-plus u-media-viewer__icon-inner"></span>
+                                                    </span>
+                                                </span>
+                                            </a>
+                                            <!-- End Gallery -->
+                                        </div>
+                                        <div class="col"></div>
+                                    </div>
+                                    <!-- End Gallery -->
+                                </div>
+                                <div class="flex-center-between">
+                                    <div class="prodcut-price">
+                                        {% if item.price_discount %}
+                                            <del class="font-size-18 tex-gray-6 bottom-100 d-block">{{ item.price_currency|price_change }} {{ currency }}</del>
+                                            <ins class="font-size-20 text-red text-decoration-none d-block">{{ item.price_discount|price_change }} {{ currency }}</ins>
+                                        {% else %}
+                                            <div class="text-gray-100">{{ item.price_currency|price_change }} {{ currency }}</div>
+                                        {% endif %}
+                                    </div>
+                                    <div class="d-none d-xl-block prodcut-add-cart">
+                                        <a href="{% url 'carts:cart_add' item.id %}" class="btn-add-cart btn-add-cart__wide btn-primary transition-3d-hover"><i class="ec ec-add-to-cart mr-2"></i> Add to Cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-item__footer">
+                                <div class="border-top pt-2 flex-center-between flex-wrap">
+                                    <a href="../shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
+                                    <a href="{% url 'wishlists:add' item.slug %}" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    {% endfor %}
+    <div class="col-md-3 col-wd-4 d-md-flex d-wd-block">
+        <ul class="row list-unstyled products-group no-gutters mb-0 flex-xl-column flex-wd-row">
+            {% for item in product_items|slice:'5:9'%}
+                <li class="col-xl-6 product-item max-width-xl-100 remove-divider">
+                    <div class="product-item__outer h-100 w-100 prodcut-box-shadow">
+                        <div class="product-item__inner bg-white p-3">
+                            <div class="product-item__body pb-xl-2">
+                                <div class="mb-2"><a href="{{ item.product.category.get_obsolute_url }}" class="font-size-12 text-gray-5">{{ item.product.category.title }}</a></div>
+                                <h5 class="mb-1 product-item__title"><a href="{{ item.get_obsolute_url }}" class="text-blue font-weight-bold">{{ item.title }}</a></h5>
+                                <div class="mb-2">
+                                    <a href="{{ item.get_obsolute_url }}" class="d-block text-center"><img class="img-fluid" src="media/{{ item.image }}" alt="Image Description"></a>
+                                </div>
+                                <div class="flex-center-between mb-1">
+                                    <div class="prodcut-price">
+                                        <div class="text-gray-100">{{ item.price_currency }} {{ currency }}</div>
+                                    </div>
+                                    <div class="d-none d-xl-block prodcut-add-cart">
+                                        <a href="{% url 'carts:cart_add' item.id %}" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-item__footer">
+                                <div class="border-top pt-2 flex-center-between flex-wrap">
+                                    <a href="../shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
+                                    <a href="{% url 'wishlists:add' item.slug %}" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>

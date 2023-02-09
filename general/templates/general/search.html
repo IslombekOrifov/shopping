@@ -1,0 +1,322 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load blog_tags %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+    <!-- ========== MAIN CONTENT ========== -->
+    <main id="content" role="main">
+        <!-- breadcrumb -->
+        <div class="bg-gray-13 bg-md-transparent">
+            <div class="container">
+                <!-- breadcrumb -->
+                <div class="my-md-3">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb mb-3 flex-nowrap flex-xl-wrap overflow-auto overflow-xl-visble">
+                            <li class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1"><a href="{% url 'general:index' %}">Home</a></li>
+                            <li class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1 active" aria-current="page">{{ category.title }}</li>
+                        </ol>
+                    </nav>
+                </div>
+                <!-- End breadcrumb -->
+            </div>
+        </div>
+        <!-- End breadcrumb -->
+
+        <div class="container">
+            <div class="row mb-8">
+                <div class="d-none d-xl-block col-xl-3 col-wd-2gdot5">
+                    <div class="mb-8">
+                        <div class="border-bottom border-color-1 mb-5">
+                            <h3 class="section-title section-title__sm mb-0 pb-2 font-size-18">Latest Products</h3>
+                        </div>
+                        <ul class="list-unstyled">
+                            {% for latest in latest_products %}
+                                <li class="mb-4">
+                                    <div class="row">
+                                        <div class="col-auto">
+                                            <a href="{{ latest.get_absolute_url }}" class="d-block width-75">
+                                                <img class="img-fluid" src="{% get_media_prefix %}{{ latest.image }}" alt="Image Description">
+                                            </a>
+                                        </div>
+                                        <div class="col">
+                                            <h3 class="text-lh-1dot2 font-size-14 mb-0"><a href="{{ latest.get_absolute_url }}">{{ latest.title }}</a></h3>
+                                            <div class="text-warning text-ls-n2 font-size-16 mb-1" style="width: 80px;">
+                                                <small class="fas fa-star"></small>
+                                                <small class="fas fa-star"></small>
+                                                <small class="fas fa-star"></small>
+                                                <small class="fas fa-star"></small>
+                                                <small class="far fa-star text-muted"></small>
+                                            </div>
+                                            <div class="font-weight-bold">
+                                                {% if latest.price_discount %}
+                                                    <del class="font-size-11 text-gray-9 d-block">{{ latest.price_currency|price_change }} {{ currency }}</del>
+                                                    <ins class="font-size-15 text-red text-decoration-none d-block">{{ latest.price_discount|price_change }} {{ currency }}</ins>
+                                                {% else %}
+                                                    <div class="text-gray-100">{{ latest.price_currency|price_change }} {{ currency }}</div>
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-9 col-wd-9gdot5">
+                    <!-- Shop-control-bar -->
+                    <div class="bg-gray-1 flex-center-between borders-radius-9 py-1">
+                        <div class="d-xl-none">
+                            <!-- Account Sidebar Toggle Button -->
+                            <a id="sidebarNavToggler1" class="btn btn-sm py-1 font-weight-normal" href="javascript:;" role="button"
+                                aria-controls="sidebarContent1"
+                                aria-haspopup="true"
+                                aria-expanded="false"
+                                data-unfold-event="click"
+                                data-unfold-hide-on-scroll="false"
+                                data-unfold-target="#sidebarContent1"
+                                data-unfold-type="css-animation"
+                                data-unfold-animation-in="fadeInLeft"
+                                data-unfold-animation-out="fadeOutLeft"
+                                data-unfold-duration="500">
+                                <i class="fas fa-sliders-h"></i> <span class="ml-1">Filters</span>
+                            </a>
+                            <!-- End Account Sidebar Toggle Button -->
+                        </div>
+                        <div class="px-3 d-none d-xl-block">
+                            <ul class="nav nav-tab-shop" id="pills-tab" role="tablist">
+                            </ul>
+                        </div>
+                        <div class="d-flex">
+                            <form  method="get">
+                                <!-- Select -->
+                                <select class="js-select selectpicker dropdown-select max-width-200 max-width-160-sm right-dropdown-0 px-2 px-xl-0"
+                                    data-style="btn-sm bg-white font-weight-normal py-2 border text-gray-20 bg-lg-down-transparent border-lg-down-0" id="select-sort">
+                                    <option name='sort' value="default">Default sorting</option>
+                                    <option name='sort' value="-views_count">Sort by popularity</option>
+                                    <option name='sort' value="rating">Sort by average rating</option>
+                                    <option name='sort' value="-updated">Sort by latest</option>
+                                    <option name='sort' value="price">Sort by price: low to high</option>
+                                    <option name='sort' value="-price">Sort by price: high to low</option>
+                                </select>
+                                <!-- End Select -->
+                            </form>
+                        </div>
+                    </div>
+                    <!-- End Shop-control-bar -->
+                    <!-- Shop Body -->
+                    <!-- Tab Content -->
+                    <div class="tab-content" id="pills-tabContent">
+                        <div class="tab-pane fade pt-2 show active productlist" id="pills-two-example1" role="tabpanel" aria-labelledby="pills-two-example1-tab" data-target-group="groups">
+                            
+                            <div class="prodlists" id="prodlist2">
+                                <ul class="row list-unstyled products-group no-gutters productlist1">
+                                    {% include "products/for_client/shop-category_prodlist2_ajax.html" %}
+                                </ul>
+                            </div> 
+                            
+                        </div>
+                    </div>
+                    <!-- End Tab Content -->
+                    <!-- End Shop Body -->
+                   
+                </div>
+            </div>
+            <!-- Brand Carousel -->
+            <div class="mb-6">
+                <div class="py-2 border-top border-bottom">
+                    <div class="js-slick-carousel u-slick my-1"
+                        data-slides-show="5"
+                        data-slides-scroll="1"
+                        data-arrows-classes="d-none d-lg-inline-block u-slick__arrow-normal u-slick__arrow-centered--y"
+                        data-arrow-left-classes="fa fa-angle-left u-slick__arrow-classic-inner--left z-index-9"
+                        data-arrow-right-classes="fa fa-angle-right u-slick__arrow-classic-inner--right"
+                        data-responsive='[{
+                            "breakpoint": 992,
+                            "settings": {
+                                "slidesToShow": 2
+                            }
+                        }, {
+                            "breakpoint": 768,
+                            "settings": {
+                                "slidesToShow": 1
+                            }
+                        }, {
+                            "breakpoint": 554,
+                            "settings": {
+                                "slidesToShow": 1
+                            }
+                        }]'>
+                        <div class="js-slide">
+                            <a href="#" class="link-hover__brand">
+                                <img class="img-fluid m-auto max-height-50" src="../../assets/img/200X60/img1.png" alt="Image Description">
+                            </a>
+                        </div>
+                        <div class="js-slide">
+                            <a href="#" class="link-hover__brand">
+                                <img class="img-fluid m-auto max-height-50" src="../../assets/img/200X60/img2.png" alt="Image Description">
+                            </a>
+                        </div>
+                        <div class="js-slide">
+                            <a href="#" class="link-hover__brand">
+                                <img class="img-fluid m-auto max-height-50" src="../../assets/img/200X60/img3.png" alt="Image Description">
+                            </a>
+                        </div>
+                        <div class="js-slide">
+                            <a href="#" class="link-hover__brand">
+                                <img class="img-fluid m-auto max-height-50" src="../../assets/img/200X60/img4.png" alt="Image Description">
+                            </a>
+                        </div>
+                        <div class="js-slide">
+                            <a href="#" class="link-hover__brand">
+                                <img class="img-fluid m-auto max-height-50" src="../../assets/img/200X60/img5.png" alt="Image Description">
+                            </a>
+                        </div>
+                        <div class="js-slide">
+                            <a href="#" class="link-hover__brand">
+                                <img class="img-fluid m-auto max-height-50" src="../../assets/img/200X60/img6.png" alt="Image Description">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Brand Carousel -->
+        </div>
+    </main>
+    <!-- ========== END MAIN CONTENT ========== -->
+{% endblock %}
+
+{% block aside %}
+    <!-- Sidebar Navigation -->
+    <aside id="sidebarContent1" class="u-sidebar u-sidebar--left" aria-labelledby="sidebarNavToggler1">
+        <div class="u-sidebar__scroller">
+            <div class="u-sidebar__container">
+                <div class="">
+                    <!-- Toggle Button -->
+                    <div class="d-flex align-items-center pt-3 px-4 bg-white">
+                        <button type="button" class="close ml-auto"
+                            aria-controls="sidebarContent1"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                            data-unfold-event="click"
+                            data-unfold-hide-on-scroll="false"
+                            data-unfold-target="#sidebarContent1"
+                            data-unfold-type="css-animation"
+                            data-unfold-animation-in="fadeInLeft"
+                            data-unfold-animation-out="fadeOutLeft"
+                            data-unfold-duration="500">
+                            <span aria-hidden="true"><i class="ec ec-close-remove"></i></span>
+                        </button>
+                    </div>
+                    <!-- End Toggle Button -->
+
+                    <!-- Content -->
+                    <div class="js-scrollbar u-sidebar__body">
+                        <div class="u-sidebar__content u-header-sidebar__content px-4">
+                            <div class="mb-6">
+                                <div class="border-bottom border-color-1 mb-5">
+                                    <h3 class="section-title section-title__sm mb-0 pb-2 font-size-18">Latest Products</h3>
+                                </div>
+                                <ul class="list-unstyled">
+                                    {% for latest in latest_products %}
+                                        <li class="mb-4">
+                                            <div class="row">
+                                                <div class="col-auto">
+                                                    <a href="{{ latest.get_absolute_url }}" class="d-block width-75">
+                                                        <img class="img-fluid" src="{% get_media_prefix %}{{ latest.image }}" alt="Image Description">
+                                                    </a>
+                                                </div>
+                                                <div class="col">
+                                                    <h3 class="text-lh-1dot2 font-size-14 mb-0"><a href="{{ latest.get_absolute_url }}">{{ latest.title }}</a></h3>
+                                                    <div class="text-warning text-ls-n2 font-size-16 mb-1" style="width: 80px;">
+                                                        <small class="fas fa-star"></small>
+                                                        <small class="fas fa-star"></small>
+                                                        <small class="fas fa-star"></small>
+                                                        <small class="fas fa-star"></small>
+                                                        <small class="far fa-star text-muted"></small>
+                                                    </div>
+                                                    <div class="font-weight-bold">
+                                                        {% if latest.price_discount %}
+                                                            <del class="font-size-18 tex-gray-6 bottom-100 d-block">{{ latest.price_currency|price_change }} {{ currency }}</del>
+                                                            <ins class="font-size-20 text-red text-decoration-none d-block">{{ latest.price_discount|price_change }} {{ currency }}</ins>
+                                                        {% else %}
+                                                            <div class="text-gray-100">{{ latest.price_currency|price_change }} {{ currency }}</div>
+                                                        {% endif %}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Content -->
+                </div>
+            </div>
+        </div>
+    </aside>
+    <!-- End Sidebar Navigation -->
+{% endblock %}
+
+{% block domready %}
+
+    var current_url = window.location.hostname
+
+    var page = 1;
+    var empty_page = false;
+    var block_request = false;
+
+    $(window).scroll(function() {
+    var margin = $(document).height() - $(window).height() - $(document).height()*0.38;
+    if  ($(window).scrollTop() > margin && empty_page == false &&
+    block_request == false) {
+    block_request = true;
+        page += 1;
+        $.get('&page=' + page, function(data) {
+        if(data == '') {
+            empty_page = true;
+        }
+        else {
+            $('#pills-two-example1 #prodlist2 .productlist1').append(data);
+            block_request = false;
+            
+            
+        }
+        });
+    }
+    });
+
+
+    document.getElementById('select-sort').addEventListener('change', function() {
+        var sort_value = this.value
+        block_request = false;
+        if (block_request == false) {
+            block_request = true;
+                page = 1;
+                var sort_url = window.location.href;
+                var sort_url_js = 1
+                if(sort_url.includes('?')) {
+                    sort_url_js = '../../ajax/category/{{ category.slug}}/?page=' + page + '&sort=' + sort_value;
+                }
+                else {
+                    sort_url_js = '../../ajax/category/{{ category.slug}}/?page=' + page + '&sort=' + sort_value;
+                }
+                $.get(sort_url_js, function(data) {
+                if(data == '') {
+                    empty_page = true;
+                    block_request = false;
+                }
+                else {
+                    $('#pills-two-example1 #prodlist2 .productlist1').empty().append(data);
+                    block_request = false;
+                }
+            });
+           
+        }
+        else {
+        }
+    });
+
+{% endblock %}

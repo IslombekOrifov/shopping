@@ -1,0 +1,38 @@
+{% load blog_tags %}
+<ul class="row list-unstyled products-group no-gutters">
+    {% for item in top_section_prod%}
+        <li class="col-6 col-wd-3 col-md-4 product-item">
+            <div class="product-item__outer h-100">
+                <div class="product-item__inner px-xl-4 p-3">
+                    <div class="product-item__body pb-xl-2">
+                        <div class="mb-2"><a href="{{ item.product.category.get_absolute_url }}" class="font-size-12 text-gray-5">{{ item.product.category.title }}</a></div>
+                        <h5 class="mb-1 product-item__title"><a href="{{ item.get_absolute_url }}" class="text-blue font-weight-bold">{{ item.title }}</a></h5>
+                        <div class="mb-2">
+                            <a href="{{ item.get_absolute_url }}" class="d-block text-center"><img class="img-fluid" src="media/{{ item.image }}" alt="There should be image :)"></a>
+                        </div>
+                        
+                        <div class="flex-center-between mb-1">
+                            <div class="prodcut-price">
+                                {% if item.price_discount %}
+                                    <del class="font-size-18 tex-gray-6 bottom-100 d-block">{{ item.price_currency|price_change }} {{ currency }}</del>
+                                    <ins class="font-size-20 text-red text-decoration-none d-block">{{ item.price_discount|price_change }} {{ currency }}</ins>
+                                {% else %}
+                                    <div class="text-gray-100">{{ item.price_currency|price_change }} {{ currency }}</div>
+                                {% endif %}
+                            </div>
+                            <div class="d-none d-xl-block prodcut-add-cart">
+                                <a href="{% url 'carts:cart_add' item.id %}" class="btn-add-cart btn-primary transition-3d-hover"><i class="ec ec-add-to-cart"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-item__footer">
+                        <div class="border-top pt-2 flex-center-between flex-wrap">
+                            <a href="../shop/compare.html" class="text-gray-6 font-size-13"><i class="ec ec-compare mr-1 font-size-15"></i> Compare</a>
+                            <a href="{% url 'wishlists:add' item.slug %}" class="text-gray-6 font-size-13"><i class="ec ec-favorites mr-1 font-size-15"></i> Add to Wishlist</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+    {% endfor %}
+</ul>

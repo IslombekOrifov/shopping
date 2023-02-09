@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}About | Electro - Responsive Website Template{% endblock %}
+{% block content %}
+    <!-- ========== MAIN CONTENT ========== -->
+    <main id="content" role="main">
+        <div class="bg-img-hero mb-14" style="background-image: url({% static 'customer/assets/img/1920x600/img1.jpg' %});">
+            <div class="container">
+                <div class="flex-content-center max-width-620-lg flex-column mx-auto text-center min-height-564">
+                    <h1 class="h1 font-weight-bold">About Us</h1>
+                    <p class="text-gray-39 font-size-18 text-lh-default">{{ about.quoute }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                {% for thing in about.things|slice:":3" %}
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <div class="card mb-3 border-0 text-center rounded-0">
+                        <img class="img-fluid mb-3" src="{{ thing.image.url }}" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="font-size-18 font-weight-semi-bold mb-3">{{ thing.title }}</h5>
+                            <p class="text-gray-90 max-width-334 mx-auto">{{ thing.body }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                
+            </div>
+        </div>
+        <div class="bg-gray-1 py-12 mb-10 mb-lg-15">
+            <div class="container">
+                <div class="row">
+                    {% for person in about.groups %}
+                        <div class="col-md-4 mb-5 mb-xl-0 col-xl text-center">
+                            <img class="img-fluid mb-3 rounded-circle" src="{{ person.person.profile.image.url }}" alt="Card image cap">
+                            <h2 class="font-size-18 font-weight-semi-bold mb-0">{{ person.person.get_full_name }}</h2>
+                            <span class="text-gray-41">{{ person.role }}</span>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="container mb-8 mb-lg-0">
+            <div class="row mb-8">
+                <div class="col-lg-7">
+                    <div class="row">
+                        {% for thing in about.things %}
+                            <div class="col-lg-6 mb-5 mb-lg-8">
+                                <h3 class="font-size-18 font-weight-semi-bold text-gray-39 mb-4">{{ thing.title }}</h3>
+                                <p class="text-gray-90">{{ thing.body }}</p>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% if about.pluss %}
+                    <div class="col-lg-5">
+                        <div class="ml-lg-8">
+                            <h3 class="font-size-18 font-weight-semi-bold text-gray-39 mb-4">What can we do for you ?</h3>
+                            <!-- Basics Accordion -->
+                            <div id="basicsAccordion1" class="about-accordion">
+                                <!-- Card -->
+                                {% for plus in about.pluss %}
+                                    <div class="card mb-4 border-color-4 rounded-0">
+                                        <div class="card-header card-collapse border-color-4" id="basicsHeadingOne">
+                                            <h5 class="mb-0">
+                                                <button type="button" class="btn btn-link btn-block flex-horizontal-center card-btn p-0 font-size-18"
+                                                    data-toggle="collapse"
+                                                    data-target="#basicsCollapseOnee"
+                                                    aria-expanded="true"
+                                                    aria-controls="basicsCollapseOnee">
+                                                    <span class="border border-color-5 rounded font-size-12 mr-5">
+                                                        <i class="fas fa-plus"></i>
+                                                        <i class="fas fa-minus"></i>
+                                                    </span>
+                                                    {{ plus.title }}
+                                                </button>
+                                            </h5>
+                                        </div>
+                                        <div id="basicsCollapseOnee" class="collapse show"
+                                            aria-labelledby="basicsHeadingOne"
+                                            data-parent="#basicsAccordion1">
+                                            <div class="card-body">
+                                                <p class="mb-0">{{ plus.body }}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                                <!-- End Card -->
+                            </div>
+                            <!-- End Basics Accordion -->
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </main>
+    <!-- ========== END MAIN CONTENT ========== -->
+{% endblock content %}

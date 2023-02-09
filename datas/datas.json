@@ -1,0 +1,903 @@
+[
+{
+  "model": "accounts.customuser",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$390000$3qPO9DbdrFAspX9EQ1hkZg$3mnijd5XTPMWmyxVjrJ9D9cxNKTqKj2DKQXTj0vYi2k=",
+    "last_login": "2022-12-30T11:56:56Z",
+    "is_superuser": true,
+    "username": "admin",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2022-12-25T22:24:02Z",
+    "first_name": "admin",
+    "last_name": "admin",
+    "email": "islombekorifov@mail.ru",
+    "terms": true,
+    "currency": 1,
+    "role": "c",
+    "company": null,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.customuser",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$7FQkAYXWqPy22pNOVtzyGx$3kY03ydoG66obAdxhGwFJ2/FW5eMkF5Ma0An0WtjzbA=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "mycom",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2022-12-25T22:33:51Z",
+    "first_name": "mycom",
+    "last_name": "mycom",
+    "email": "mycom@gmail.com",
+    "terms": true,
+    "currency": 1,
+    "role": "cd",
+    "company": null,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.customuser",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$390000$EH8PFI4jx8zCwScvR0jbaE$p4TjyNfgI3/P3htLHmR4Rj4yBeZdrA4qwkIrLrtMaoI=",
+    "last_login": "2022-12-27T13:16:15Z",
+    "is_superuser": false,
+    "username": "islom",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2022-12-25T22:35:44Z",
+    "first_name": "Islombek",
+    "last_name": "Orifov",
+    "email": "islombekorifov@gmail.com",
+    "terms": true,
+    "currency": 1,
+    "role": "cp",
+    "company": 1,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.customuser",
+  "pk": 4,
+  "fields": {
+    "password": "pbkdf2_sha256$390000$8N63ClQbMGiYbh87mrRzxA$FlgChxc8in9Q254D8uyjdudyRx1a8lTP44B1hpJXIq0=",
+    "last_login": "2022-12-27T13:20:57Z",
+    "is_superuser": false,
+    "username": "islombek",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2022-12-27T13:19:54Z",
+    "first_name": "ISLOMBEK",
+    "last_name": "Orifov",
+    "email": "islombekorifov0199@gmail.com",
+    "terms": true,
+    "currency": 1,
+    "role": "c",
+    "company": null,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.profile",
+  "pk": 1,
+  "fields": {
+    "user": 2,
+    "image": "",
+    "date_of_birth": null,
+    "phone": null,
+    "card": null,
+    "card1": null
+  }
+},
+{
+  "model": "accounts.profile",
+  "pk": 2,
+  "fields": {
+    "user": 4,
+    "image": "",
+    "date_of_birth": null,
+    "phone": null,
+    "card": null,
+    "card1": null
+  }
+},
+{
+  "model": "company.company",
+  "pk": 1,
+  "fields": {
+    "director": 2,
+    "name": "Mycom",
+    "slug": "mycom",
+    "image": "",
+    "inn": null,
+    "created": "2022-12-25T22:35:15.628Z",
+    "updated": "2022-12-25T22:35:15.628Z",
+    "is_deleted": false
+  }
+},
+{
+  "model": "general.currency",
+  "pk": 1,
+  "fields": {
+    "author": 1,
+    "who_updated": 1,
+    "code": "UZS",
+    "name": "O'zbek so'mi",
+    "symbol": "",
+    "price": "1.00",
+    "updated": "2022-12-30T12:09:52.739Z",
+    "is_active": true
+  }
+},
+{
+  "model": "general.currency",
+  "pk": 2,
+  "fields": {
+    "author": 1,
+    "who_updated": 1,
+    "code": "USD",
+    "name": "Dollar (AQSH)",
+    "symbol": "$",
+    "price": "11220.00",
+    "updated": "2022-12-30T12:10:23.610Z",
+    "is_active": true
+  }
+},
+{
+  "model": "general.currency",
+  "pk": 3,
+  "fields": {
+    "author": 1,
+    "who_updated": 1,
+    "code": "RUB",
+    "name": "Rossiya rubli",
+    "symbol": "₽",
+    "price": "135.00",
+    "updated": "2022-12-30T12:11:55.976Z",
+    "is_active": true
+  }
+},
+{
+  "model": "general.currency",
+  "pk": 4,
+  "fields": {
+    "author": 1,
+    "who_updated": 1,
+    "code": "EUR",
+    "name": "Yevro",
+    "symbol": "€",
+    "price": "11300.00",
+    "updated": "2022-12-30T12:13:50.065Z",
+    "is_active": true
+  }
+},
+{
+  "model": "general.currency",
+  "pk": 5,
+  "fields": {
+    "author": 1,
+    "who_updated": 1,
+    "code": "TRY",
+    "name": "Turkiya lirasi",
+    "symbol": "₺",
+    "price": "599.67",
+    "updated": "2022-12-30T12:15:28.659Z",
+    "is_active": true
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 1,
+  "fields": {
+    "desc": "Tezlash",
+    "transaction_code": "",
+    "fact_deliveried": null,
+    "client": 1,
+    "client_data": null,
+    "delivery": null,
+    "total_price": 178786000,
+    "address": "Shahar/viloyat: TASHKENT, tuman: TASHKENT, address: KASHKADARYO STREET 12, home number:12, postal code: 100076",
+    "phone": "+998990001219",
+    "terms": false,
+    "created": "2022-12-26T13:24:16.624Z",
+    "updated": "2022-12-26T13:24:16.624Z",
+    "paid": false,
+    "is_success": false
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 2,
+  "fields": {
+    "desc": "Tezlash",
+    "transaction_code": "",
+    "fact_deliveried": null,
+    "client": 1,
+    "client_data": null,
+    "delivery": null,
+    "total_price": 178786000,
+    "address": "Shahar/viloyat: TASHKENT, tuman: TASHKENT, address: KASHKADARYO STREET 12, home number:12, postal code: 100076",
+    "phone": "+998990001219",
+    "terms": false,
+    "created": "2022-12-26T13:24:46.033Z",
+    "updated": "2022-12-26T13:24:46.034Z",
+    "paid": false,
+    "is_success": false
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 3,
+  "fields": {
+    "desc": "Tezlash",
+    "transaction_code": "",
+    "fact_deliveried": null,
+    "client": 1,
+    "client_data": null,
+    "delivery": null,
+    "total_price": 0,
+    "address": "Shahar/viloyat: TASHKENT, tuman: TASHKENT, address: KASHKADARYO STREET 12, home number:12, postal code: 100076",
+    "phone": "+998990001219",
+    "terms": false,
+    "created": "2022-12-26T13:25:38.706Z",
+    "updated": "2022-12-26T13:25:38.706Z",
+    "paid": false,
+    "is_success": false
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 4,
+  "fields": {
+    "desc": "Tezroq",
+    "transaction_code": "",
+    "fact_deliveried": null,
+    "client": 1,
+    "client_data": null,
+    "delivery": null,
+    "total_price": 24798000,
+    "address": "Shahar/viloyat: TASHKENT, tuman: TASHKENT, address: KASHKADARYO STREET, home number:12, postal code: 100076",
+    "phone": "+998990001219",
+    "terms": true,
+    "created": "2022-12-27T11:54:04.381Z",
+    "updated": "2022-12-27T11:54:04.381Z",
+    "paid": false,
+    "is_success": false
+  }
+},
+{
+  "model": "orders.order",
+  "pk": 5,
+  "fields": {
+    "desc": "Tezlash",
+    "transaction_code": "gvzb8x4y",
+    "fact_deliveried": null,
+    "client": 4,
+    "client_data": null,
+    "delivery": null,
+    "total_price": 52196000,
+    "address": "Shahar/viloyat: TASHKENT, tuman: TASHKENT, address: KASHKADARYO STREET, home number:12, postal code: 100076",
+    "phone": "+998990001219",
+    "terms": true,
+    "created": "2022-12-27T13:22:21.076Z",
+    "updated": "2022-12-27T15:10:37.718Z",
+    "paid": true,
+    "is_success": false
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 1,
+  "fields": {
+    "product_item": 2,
+    "order": 1,
+    "quantity": 5,
+    "price": "11099000.00"
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 2,
+  "fields": {
+    "product_item": 1,
+    "order": 1,
+    "quantity": 9,
+    "price": "13699000.00"
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 3,
+  "fields": {
+    "product_item": 2,
+    "order": 2,
+    "quantity": 5,
+    "price": "11099000.00"
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 4,
+  "fields": {
+    "product_item": 1,
+    "order": 2,
+    "quantity": 9,
+    "price": "13699000.00"
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 5,
+  "fields": {
+    "product_item": 2,
+    "order": 4,
+    "quantity": 1,
+    "price": "11099000.00"
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 6,
+  "fields": {
+    "product_item": 1,
+    "order": 4,
+    "quantity": 1,
+    "price": "13699000.00"
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 7,
+  "fields": {
+    "product_item": 2,
+    "order": 5,
+    "quantity": 1,
+    "price": "11099000.00"
+  }
+},
+{
+  "model": "orders.orderitem",
+  "pk": 8,
+  "fields": {
+    "product_item": 1,
+    "order": 5,
+    "quantity": 3,
+    "price": "13699000.00"
+  }
+},
+{
+  "model": "products.category",
+  "pk": 1,
+  "fields": {
+    "created": "2022-12-25T22:39:44.477Z",
+    "updated": "2022-12-25T22:39:44.477Z",
+    "title": "Telefonlar va gadjetlar",
+    "slug": "telefonlar-va-gadjetlar",
+    "author": 1,
+    "image": "",
+    "parent": null,
+    "active": true,
+    "who_updated": 1
+  }
+},
+{
+  "model": "products.category",
+  "pk": 2,
+  "fields": {
+    "created": "2022-12-25T22:40:13.053Z",
+    "updated": "2022-12-25T22:40:13.053Z",
+    "title": "Telefonlar",
+    "slug": "telefonlar",
+    "author": 1,
+    "image": "",
+    "parent": 1,
+    "active": true,
+    "who_updated": 1
+  }
+},
+{
+  "model": "products.category",
+  "pk": 3,
+  "fields": {
+    "created": "2022-12-25T22:40:34.636Z",
+    "updated": "2022-12-25T22:40:34.636Z",
+    "title": "Smartfonlar",
+    "slug": "smartfonlar",
+    "author": 1,
+    "image": "",
+    "parent": 2,
+    "active": true,
+    "who_updated": 1
+  }
+},
+{
+  "model": "products.category",
+  "pk": 4,
+  "fields": {
+    "created": "2022-12-25T22:41:19.860Z",
+    "updated": "2022-12-25T22:41:57.592Z",
+    "title": "Radio telefonlar",
+    "slug": "radio-telefonlar",
+    "author": 1,
+    "image": "",
+    "parent": 2,
+    "active": true,
+    "who_updated": 1
+  }
+},
+{
+  "model": "products.category",
+  "pk": 5,
+  "fields": {
+    "created": "2022-12-25T22:41:39.261Z",
+    "updated": "2022-12-25T22:41:39.261Z",
+    "title": "Kabelli telefonlar",
+    "slug": "kabelli-telefonlar",
+    "author": 1,
+    "image": "",
+    "parent": 2,
+    "active": true,
+    "who_updated": 1
+  }
+},
+{
+  "model": "products.category",
+  "pk": 6,
+  "fields": {
+    "created": "2022-12-25T22:42:22.085Z",
+    "updated": "2022-12-25T22:42:22.085Z",
+    "title": "Tugmachali telefonlar",
+    "slug": "tugmachali-telefonlar",
+    "author": 1,
+    "image": "",
+    "parent": 2,
+    "active": true,
+    "who_updated": 1
+  }
+},
+{
+  "model": "products.category",
+  "pk": 7,
+  "fields": {
+    "created": "2022-12-25T22:43:44.137Z",
+    "updated": "2022-12-25T22:43:44.137Z",
+    "title": "Smart soatlar va brasletlar",
+    "slug": "smart-soatlar-va-brasletlar",
+    "author": 1,
+    "image": "",
+    "parent": 1,
+    "active": true,
+    "who_updated": 1
+  }
+},
+{
+  "model": "products.category",
+  "pk": 8,
+  "fields": {
+    "created": "2022-12-25T22:44:40.985Z",
+    "updated": "2022-12-25T22:44:40.985Z",
+    "title": "Smart-soat va fitnes-brasletlar uchun aksessuarlar",
+    "slug": "smart-soat-va-fitnes-brasletlar-uchun-aksessuarlar",
+    "author": 1,
+    "image": "",
+    "parent": 7,
+    "active": true,
+    "who_updated": 1
+  }
+},
+{
+  "model": "products.category",
+  "pk": 9,
+  "fields": {
+    "created": "2022-12-25T22:45:10.125Z",
+    "updated": "2022-12-25T22:45:10.125Z",
+    "title": "Smart soatlar",
+    "slug": "smart-soatlar",
+    "author": 1,
+    "image": "",
+    "parent": 7,
+    "active": true,
+    "who_updated": 1
+  }
+},
+{
+  "model": "products.category",
+  "pk": 10,
+  "fields": {
+    "created": "2022-12-25T22:45:40.468Z",
+    "updated": "2022-12-25T22:45:40.468Z",
+    "title": "Fitenes bilaguzuklar",
+    "slug": "fitenes-bilaguzuklar",
+    "author": 1,
+    "image": "",
+    "parent": 7,
+    "active": true,
+    "who_updated": 1
+  }
+},
+{
+  "model": "products.category",
+  "pk": 11,
+  "fields": {
+    "created": "2022-12-25T22:46:10.632Z",
+    "updated": "2022-12-25T22:46:10.632Z",
+    "title": "Kompyuterlar va orgtexnika",
+    "slug": "kompyuterlar-va-orgtexnika",
+    "author": 1,
+    "image": "",
+    "parent": null,
+    "active": true,
+    "who_updated": 1
+  }
+},
+{
+  "model": "products.category",
+  "pk": 12,
+  "fields": {
+    "created": "2022-12-25T22:46:43.437Z",
+    "updated": "2022-12-25T22:46:43.437Z",
+    "title": "Noutbuklar va aksessuarlar",
+    "slug": "noutbuklar-va-aksessuarlar",
+    "author": 1,
+    "image": "",
+    "parent": 11,
+    "active": true,
+    "who_updated": 1
+  }
+},
+{
+  "model": "products.category",
+  "pk": 13,
+  "fields": {
+    "created": "2022-12-25T22:47:09.196Z",
+    "updated": "2022-12-25T22:47:09.196Z",
+    "title": "Noutbuklar",
+    "slug": "noutbuklar",
+    "author": 1,
+    "image": "",
+    "parent": 12,
+    "active": true,
+    "who_updated": 1
+  }
+},
+{
+  "model": "products.category",
+  "pk": 14,
+  "fields": {
+    "created": "2022-12-25T22:47:32.230Z",
+    "updated": "2022-12-25T22:47:32.231Z",
+    "title": "Noutbuk uchun sumkalar",
+    "slug": "noutbuk-uchun-sumkalar",
+    "author": 1,
+    "image": "",
+    "parent": 12,
+    "active": true,
+    "who_updated": 1
+  }
+},
+{
+  "model": "products.category",
+  "pk": 15,
+  "fields": {
+    "created": "2022-12-25T22:48:38.538Z",
+    "updated": "2022-12-25T22:48:38.538Z",
+    "title": "Noutbuk uchun powerbank",
+    "slug": "noutbuk-uchun-powerbank",
+    "author": 1,
+    "image": "",
+    "parent": 12,
+    "active": true,
+    "who_updated": 1
+  }
+},
+{
+  "model": "products.category",
+  "pk": 16,
+  "fields": {
+    "created": "2022-12-25T22:49:10.287Z",
+    "updated": "2022-12-25T22:49:10.288Z",
+    "title": "Kompyuter jihozlari",
+    "slug": "kompyuter-jihozlari",
+    "author": 1,
+    "image": "",
+    "parent": 12,
+    "active": true,
+    "who_updated": 1
+  }
+},
+{
+  "model": "products.category",
+  "pk": 17,
+  "fields": {
+    "created": "2022-12-25T22:50:34.317Z",
+    "updated": "2022-12-25T22:50:34.317Z",
+    "title": "Videokartalar",
+    "slug": "videokartalar",
+    "author": 1,
+    "image": "",
+    "parent": 16,
+    "active": true,
+    "who_updated": 1
+  }
+},
+{
+  "model": "products.category",
+  "pk": 18,
+  "fields": {
+    "created": "2022-12-25T22:51:09.431Z",
+    "updated": "2022-12-25T22:51:09.431Z",
+    "title": "Operativ xotira",
+    "slug": "operativ-xotira",
+    "author": 1,
+    "image": "",
+    "parent": 16,
+    "active": true,
+    "who_updated": 1
+  }
+},
+{
+  "model": "products.category",
+  "pk": 19,
+  "fields": {
+    "created": "2022-12-29T16:49:11.746Z",
+    "updated": "2022-12-29T16:49:11.746Z",
+    "title": "Kitoblar",
+    "slug": "kitoblar",
+    "author": 3,
+    "image": "",
+    "parent": null,
+    "active": true,
+    "who_updated": 3
+  }
+},
+{
+  "model": "products.brand",
+  "pk": 1,
+  "fields": {
+    "created": "2022-12-25T22:37:06.368Z",
+    "updated": "2022-12-25T22:37:06.368Z",
+    "author": 1,
+    "company": null,
+    "who_updated": 1,
+    "name": "Apple",
+    "slug": "apple",
+    "logo": "Apple_Logo_1998_4I67ddW.png",
+    "active": true
+  }
+},
+{
+  "model": "products.brand",
+  "pk": 2,
+  "fields": {
+    "created": "2022-12-25T22:38:42.167Z",
+    "updated": "2022-12-25T22:38:42.167Z",
+    "author": 1,
+    "company": null,
+    "who_updated": 1,
+    "name": "Samsung",
+    "slug": "samsung",
+    "logo": "original-samsung-logo-10.png",
+    "active": true
+  }
+},
+{
+  "model": "products.product",
+  "pk": 1,
+  "fields": {
+    "created": "2022-12-25T23:23:40.898Z",
+    "updated": "2022-12-25T23:23:40.898Z",
+    "title": "Samsung Galaxy S22 Ultra 5G",
+    "slug": "samsung-galaxy-s22-ultra-5g",
+    "category": 3,
+    "author": 3,
+    "who_updated": 3,
+    "company": 1,
+    "brand": 2,
+    "description": "<h2>Встречайте Galaxy S22 Ultra с мощью Note. Его тонкий алюминиевый корпус впечатляет своей совершенной формой. А изысканные очертания основных камер как будто утопают в его гладкой поверхности.</h2>\r\n\r\n<p>Электронное перо S Pen впервые в серии S. Извлеките его из нижней части корпуса, чтобы делать заметки, рисовать или управлять смартфоном. Улучшенный отклик в Samsung Notes делает каждый штрих пера таким же естественным, как будто вы пишете обычной ручкой, а ваши идеи мгновенно трансформируются в разборчивый текст.</p>\r\n\r\n<p>Инновационный 4нм чип обеспечивает первоклассную мощность. Наслаждайтесь потрясающими ночными снимками, невероятно четкими фотографиями и фантастическими победами в мобильных играх.</p>\r\n\r\n<p>Оцените дисплей Dynamic AMOLED 2X с технологией Vision Booster и пиковой яркостью 1750 нит, благодаря которому вы забудете о бликах. А адаптивная частота обновления 120 Гц обеспечивает суперплавный скроллинг для оптимального просмотра.</p>\r\n\r\n<p>Супермощная умная батарея 5000 мА&middot;ч (типичное значение) подстраивается под ваши интересы. Она экономит энергию, когда это больше всего необходимо, продлевая срок службы батареи. Фотографируйте, общайтесь и играйте от рассвета и до заката.</p>",
+    "is_archive": false,
+    "is_active": true,
+    "is_deleted": false
+  }
+},
+{
+  "model": "products.product",
+  "pk": 2,
+  "fields": {
+    "created": "2022-12-25T23:25:20.334Z",
+    "updated": "2022-12-25T23:25:20.334Z",
+    "title": "iPhone 13",
+    "slug": "iphone-13",
+    "category": 3,
+    "author": 3,
+    "who_updated": 3,
+    "company": 1,
+    "brand": 1,
+    "description": "<p>Наша самая совершенная система двух камер.<br />\r\nОсобый взгляд на прочность дисплея.<br />\r\nЧип, с которым всё супербыстро.<br />\r\nАккумулятор держится заметно дольше.<br />\r\niPhone 13 - сильный мира всего.<br />\r\nМы разработали совершенно новую схему расположения и развернули объективы на 45 градусов. Благодаря этому внутри корпуса поместилась наша лучшая система двух камер с увеличенной матрицей широкоугольной камеры.<br />\r\nКроме того, мы освободили место для системы оптической стабилизации изображения сдвигом матрицы. И повысили скорость работы матрицы на сверхширокоугольной камере.<br />\r\nНовая сверхширокоугольная камера видит больше деталей в тёмных областях снимков. Новая широкоугольная камера улавливает на 47% больше света для более качественных фотографий и видео. Новая оптическая стабилизация со сдвигом матрицы обеспечит чёткие кадры даже в неустойчивом положении.<br />\r\nРежим &laquo;Киноэффект&raquo; автоматически добавляет великолепные эффекты перемещения фокуса и изменения резкости. Просто начните запись видео. Режим &laquo;Киноэффект&raquo; будет удерживать фокус на объекте съёмки, создавая красивый эффект размытия вокруг него. Режим &laquo;Киноэффект&raquo; распознаёт, когда нужно перевести фокус на другого человека или объект, который появился в кадре. Теперь ваши видео будут смотреться как настоящее кино.<br />\r\nХотите переместить фокус или добавить эффект художественного размытия по окончании съёмки? Не проблема. С iPhone для этого достаточно нескольких касаний. На такое способны даже не все профессиональные кинокамеры.<br />\r\nДисплей OLED стал на 28% ярче &mdash; до 800 кд/﻿м&sup2;. На нём всё хорошо видно даже в самый солнечный день. А яркость при просмотре контента в HDR достигает 1200 кд/﻿м&sup2;. Вы сможете различить мельчайшие оттенки чёрного и белого &mdash; как и всех остальных цветов. При этом дисплей расходует заряд аккумулятора ещё более экономно, чем прежде.</p>",
+    "is_archive": false,
+    "is_active": true,
+    "is_deleted": false
+  }
+},
+{
+  "model": "products.product",
+  "pk": 3,
+  "fields": {
+    "created": "2022-12-28T02:18:48.917Z",
+    "updated": "2022-12-28T02:18:48.918Z",
+    "title": "iPhone 13 Pro",
+    "slug": "iphone-13-pro",
+    "category": 3,
+    "author": 3,
+    "who_updated": 3,
+    "company": 1,
+    "brand": 1,
+    "description": "<p>Дисплей Super Retina XDR с технологией ProMotion и быстрым, плавным откликом. Грандиозный апгрейд системы камер, открывающий совершенно новые возможности. Исключительная прочность. A15 Bionic &mdash; самый быстрый чип для iPhone. И впечатляющее время работы без подзарядки. Всё это Pro. Хирургическая нержавеющая сталь, панель Ceramic Shield, надёжная защита от воды (IP68) &mdash; всё это невероятно красиво и исключительно прочно. Встречайте дисплей Super Retina XDR с технологией ProMotion. У него адаптивная частота обновления до 120 Гц и великолепная графическая производительность &mdash; прикоснитесь и удивитесь.<br />\r\nImei kodini ro&#39;yxatdan o&#39;tkazing. Qurilma imei kodlari xarid qilingan kundan boshlab 30 kun ichida ro&#39;yxatga olinadi. Agar mobil qurilmada E-SIM (elektron SIM karta) uchun slot mavjud bo&lsquo;lsa, uni faollashtirish uchun xaridor tovar narxidan tashqari 340 000 so&lsquo;m to&lsquo;lashi kerak.</p>",
+    "is_archive": false,
+    "is_active": true,
+    "is_deleted": false
+  }
+},
+{
+  "model": "products.productitem",
+  "pk": 1,
+  "fields": {
+    "created": "2022-12-25T23:27:46.519Z",
+    "updated": "2022-12-25T23:27:46.519Z",
+    "product": 1,
+    "author": 3,
+    "who_updated": 3,
+    "title": "Samsung Galaxy S22 Ultra 5G 12/512GB Black smartfoni",
+    "slug": "asd21a2sf15e1f5egwe4g152",
+    "model": "S22 Ultra 5G",
+    "price": "13699000.00",
+    "count_in_stock": 25,
+    "new_count": 5,
+    "specification": "<table>\r\n\t<tbody>\r\n\t\t<tr>\r\n\t\t\t<td>Og&#39;irligi</td>\r\n\t\t\t<td>228 г</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>O&#39;lchami</td>\r\n\t\t\t<td>ширина: 77.9мм, длина: 163.3мм, толщина: 8.9мм</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Versiya OS</td>\r\n\t\t\t<td>Android 12</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>SIM karta turi</td>\r\n\t\t\t<td>Nano</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Aloqa standarti</td>\r\n\t\t\t<td>4G LTE, 5G, 3G, 2G</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Video Protsessor</td>\r\n\t\t\t<td>Samsung Xclipse 920</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Kafolat muddati</td>\r\n\t\t\t<td>1г</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Old kamera o&#39;lchamlari</td>\r\n\t\t\t<td>40 МП</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Naushniklar</td>\r\n\t\t\t<td>Type C</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Xotira</td>\r\n\t\t\t<td>512</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>RAM</td>\r\n\t\t\t<td>12</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Protsessor</td>\r\n\t\t\t<td>Samsung Exynos 2200</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Korpus materiali</td>\r\n\t\t\t<td>алюминий и стекло</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Ro&#39;yxatdan o&#39;tish UzImei</td>\r\n\t\t\t<td>Гарантия 1 год</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Maks. video o&#39;lchamlari</td>\r\n\t\t\t<td>8К</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Ishlab chiqaruvchi mamlakat</td>\r\n\t\t\t<td><a href=\"https://asaxiy.uz/uz/uz/product/telefony-i-gadzhety/telefony/smartfony?f_ids[strana-proisxojdeniya][]=1123\">Xitoy</a></td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Asosiy (orqa) kameralar soni</td>\r\n\t\t\t<td>4</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Слот для карт памяти</td>\r\n\t\t\t<td>Нет</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Simsiz interfeyslar</td>\r\n\t\t\t<td>NFC, Bluetooth, Wi-Fi</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Batareya quvvati</td>\r\n\t\t\t<td>5000 мА&sdot;ч</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Asosiy (orqa) kameralar</td>\r\n\t\t\t<td>108 МП + 12 МП + 10 МП + 10 МП</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Maks. video kadr tezligi</td>\r\n\t\t\t<td>960 к/с</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Yadro Protsessorlar soni</td>\r\n\t\t\t<td>8</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Full HD video yozishda kadrlar tezligi</td>\r\n\t\t\t<td>240 к/c</td>\r\n\t\t</tr>\r\n\t</tbody>\r\n</table>",
+    "views_count": 5,
+    "is_archive": false,
+    "is_active": true,
+    "is_deleted": false
+  }
+},
+{
+  "model": "products.productitem",
+  "pk": 2,
+  "fields": {
+    "created": "2022-12-25T23:31:02.544Z",
+    "updated": "2022-12-25T23:31:02.544Z",
+    "product": 1,
+    "author": 3,
+    "who_updated": 3,
+    "title": "Samsung Galaxy S22 Ultra 5G 12/256GB Green Smartfoni",
+    "slug": "hgajhgbfkj4563s4df54sdg65445sgd654",
+    "model": "S22 Ultra 5G",
+    "price": "11099000.00",
+    "count_in_stock": 25,
+    "new_count": 20,
+    "specification": "<h6>Xususiyatlar</h6>\r\n\r\n<table>\r\n\t<tbody>\r\n\t\t<tr>\r\n\t\t\t<td>Og&#39;irligi</td>\r\n\t\t\t<td>228 г</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>O&#39;lchami</td>\r\n\t\t\t<td>77.9x163.3x8.9 мм</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Versiya OS</td>\r\n\t\t\t<td>Android 12</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Wi-Fi standarti</td>\r\n\t\t\t<td>802.11ax</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>SIM karta turi</td>\r\n\t\t\t<td>nano-SIM + eSIM</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Aloqa standarti</td>\r\n\t\t\t<td>4G LTE, 5G, 3G, 2G</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Video Protsessor</td>\r\n\t\t\t<td>Samsung Xclipse 920</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Kafolat muddati</td>\r\n\t\t\t<td>1 год</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Old kamera o&#39;lchamlari</td>\r\n\t\t\t<td>40 МП</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Naushniklar</td>\r\n\t\t\t<td>USB Type-C</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Xotira</td>\r\n\t\t\t<td>256 ГБ</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>RAM</td>\r\n\t\t\t<td>12 ГБ</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Protsessor</td>\r\n\t\t\t<td>Samsung Exynos 2200</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Korpus materiali</td>\r\n\t\t\t<td>алюминий и стекло</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Ro&#39;yxatdan o&#39;tish UzImei</td>\r\n\t\t\t<td>1 год</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Maks. video o&#39;lchamlari</td>\r\n\t\t\t<td>8K</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Asosiy (orqa) kameralar soni</td>\r\n\t\t\t<td>4</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Слот для карт памяти</td>\r\n\t\t\t<td>нет</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Simsiz interfeyslar</td>\r\n\t\t\t<td>NFC, Bluetooth, Wi-Fi</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Batareya quvvati</td>\r\n\t\t\t<td>5000 мА&sdot;ч</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Asosiy (orqa) kameralar</td>\r\n\t\t\t<td>108 МП</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>4K video yozishda kadrlar tezligi</td>\r\n\t\t\t<td>30/60 кадр/сек</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Maks. video kadr tezligi</td>\r\n\t\t\t<td>24 кадр/сек</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Yadro Protsessorlar soni</td>\r\n\t\t\t<td>8</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Full HD video yozishda kadrlar tezligi</td>\r\n\t\t\t<td>30/60/240 кадр/сек</td>\r\n\t\t</tr>\r\n\t</tbody>\r\n</table>",
+    "views_count": 8,
+    "is_archive": false,
+    "is_active": true,
+    "is_deleted": false
+  }
+},
+{
+  "model": "products.productitem",
+  "pk": 3,
+  "fields": {
+    "created": "2022-12-28T02:21:24.560Z",
+    "updated": "2022-12-28T02:21:24.560Z",
+    "product": 3,
+    "author": 3,
+    "who_updated": 3,
+    "title": "iPhone 13 Pro 256GB Sierra Blue Smartfoni",
+    "slug": "15154121sadfasafsdasf",
+    "model": "iPhone 13 Pro",
+    "price": "14699000.00",
+    "count_in_stock": 15,
+    "new_count": 9,
+    "specification": "<table>\r\n\t<tbody>\r\n\t\t<tr>\r\n\t\t\t<td>Og&#39;irligi</td>\r\n\t\t\t<td>203 г</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>O&#39;lchami</td>\r\n\t\t\t<td>71.5x146.7x7.65 мм</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Versiya OS</td>\r\n\t\t\t<td>iOS 15</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Wi-Fi standarti</td>\r\n\t\t\t<td>802.11ax</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>SIM karta turi</td>\r\n\t\t\t<td>nano SIM+eSIM</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Aloqa standarti</td>\r\n\t\t\t<td>4G LTE, 5G, 3G</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Kafolat muddati</td>\r\n\t\t\t<td>1 год</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Old kamera o&#39;lchamlari</td>\r\n\t\t\t<td>12 МП</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Naushniklar</td>\r\n\t\t\t<td>Lightning</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Xotira</td>\r\n\t\t\t<td>256 ГБ</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>RAM</td>\r\n\t\t\t<td>6 ГБ</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Protsessor</td>\r\n\t\t\t<td>Apple A15 Bionic</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Korpus materiali</td>\r\n\t\t\t<td>металл и стекло</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Ro&#39;yxatdan o&#39;tish UzImei</td>\r\n\t\t\t<td>1 год</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Asosiy (orqa) kameralar soni</td>\r\n\t\t\t<td>3</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Слот для карт памяти</td>\r\n\t\t\t<td>нет</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Simsiz interfeyslar</td>\r\n\t\t\t<td>NFC, Bluetooth, Wi-Fi</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Batareya quvvati</td>\r\n\t\t\t<td>3095 мА&sdot;ч</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Asosiy (orqa) kameralar</td>\r\n\t\t\t<td>12 МП</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Yadro Protsessorlar soni</td>\r\n\t\t\t<td>6</td>\r\n\t\t</tr>\r\n\t</tbody>\r\n</table>",
+    "views_count": 18,
+    "is_archive": false,
+    "is_active": true,
+    "is_deleted": false
+  }
+},
+{
+  "model": "products.productitem",
+  "pk": 4,
+  "fields": {
+    "created": "2022-12-28T02:24:04.901Z",
+    "updated": "2022-12-28T02:24:04.901Z",
+    "product": 3,
+    "author": 3,
+    "who_updated": 3,
+    "title": "iPhone 13 Pro 128GB Green Smartfoni",
+    "slug": "hgcvgfhbcv56126cbv45",
+    "model": "iPhone 13 Pro",
+    "price": "13559000.00",
+    "count_in_stock": 26,
+    "new_count": 3,
+    "specification": "<table>\r\n\t<tbody>\r\n\t\t<tr>\r\n\t\t\t<td>Og&#39;irligi</td>\r\n\t\t\t<td>203 г</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>O&#39;lchami</td>\r\n\t\t\t<td>71.5x146.7x7.65 мм</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Versiya OS</td>\r\n\t\t\t<td>iOS 15</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Wi-Fi standarti</td>\r\n\t\t\t<td>802.11ax</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>SIM karta turi</td>\r\n\t\t\t<td>nano SIM+eSIM</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Aloqa standarti</td>\r\n\t\t\t<td>4G LTE, 5G, 3G</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Kafolat muddati</td>\r\n\t\t\t<td>1 год</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Old kamera o&#39;lchamlari</td>\r\n\t\t\t<td>12 МП</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Naushniklar</td>\r\n\t\t\t<td>Lightning</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Xotira</td>\r\n\t\t\t<td>128 ГБ</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>RAM</td>\r\n\t\t\t<td>6 ГБ</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Protsessor</td>\r\n\t\t\t<td>Apple A15 Bionic</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Korpus materiali</td>\r\n\t\t\t<td>металл и стекло</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Ro&#39;yxatdan o&#39;tish UzImei</td>\r\n\t\t\t<td>1 год</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Asosiy (orqa) kameralar soni</td>\r\n\t\t\t<td>3</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Слот для карт памяти</td>\r\n\t\t\t<td>нет</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Simsiz interfeyslar</td>\r\n\t\t\t<td>NFC, Bluetooth, Wi-Fi</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Batareya quvvati</td>\r\n\t\t\t<td>3095 мА&sdot;ч</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Asosiy (orqa) kameralar</td>\r\n\t\t\t<td>12 МП</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>Yadro Protsessorlar soni</td>\r\n\t\t\t<td>6</td>\r\n\t\t</tr>\r\n\t</tbody>\r\n</table>\r\n\r\n<p>&nbsp;</p>",
+    "views_count": 96,
+    "is_archive": false,
+    "is_active": true,
+    "is_deleted": false
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 1,
+  "fields": {
+    "product_item": 1,
+    "image_original": "products/cee5ef571ac581a5c81418e514eb35512022030511064146250qE91dJqn1x.png.webp",
+    "image_detail": "products/cee5ef571ac581a5c81418e514eb35512022030511064146250qE91dJqn1x.png.jpg",
+    "image_big": "products/cee5ef571ac581a5c81418e514eb35512022030511064146250qE91dJqn1x.png_WcfBfFM.jpg",
+    "image_middle": "products/cee5ef571ac581a5c81418e514eb35512022030511064146250qE91dJqn1x.png_qaC5F9y.jpg",
+    "image_presmall": "products/cee5ef571ac581a5c81418e514eb35512022030511064146250qE91dJqn1x.png_Xgc5Zm1.jpg",
+    "image_small": "products/cee5ef571ac581a5c81418e514eb35512022030511064146250qE91dJqn1x.png_nqO2G4g.jpg",
+    "image_for_cart": "products/cee5ef571ac581a5c81418e514eb35512022030511064146250qE91dJqn1x.png_ZNkvjJD.jpg"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 2,
+  "fields": {
+    "product_item": 2,
+    "image_original": "products/884e453dbcae41345b0f748e858154652022030910295853479WAXgCIooA1.jpg.webp",
+    "image_detail": "products/884e453dbcae41345b0f748e858154652022030910295853479WAXgCIooA1.jpg.jpg",
+    "image_big": "products/884e453dbcae41345b0f748e858154652022030910295853479WAXgCIooA1.jpg_bp6VYZR.jpg",
+    "image_middle": "products/884e453dbcae41345b0f748e858154652022030910295853479WAXgCIooA1.jpg_KBOjjIA.jpg",
+    "image_presmall": "products/884e453dbcae41345b0f748e858154652022030910295853479WAXgCIooA1.jpg_EEhkkQs.jpg",
+    "image_small": "products/884e453dbcae41345b0f748e858154652022030910295853479WAXgCIooA1.jpg_x3SUQWy.jpg",
+    "image_for_cart": "products/884e453dbcae41345b0f748e858154652022030910295853479WAXgCIooA1.jpg_cdFdxTP.jpg"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 3,
+  "fields": {
+    "product_item": 4,
+    "image_original": "products/iphone13progreen.webp",
+    "image_detail": "products/iphone13progreen.jpg",
+    "image_big": "products/iphone13progreen_5FmwgJg.jpg",
+    "image_middle": "products/iphone13progreen_h1dbiIv.jpg",
+    "image_presmall": "products/iphone13progreen_yfF5aQ6.jpg",
+    "image_small": "products/iphone13progreen_B7h4CRV.jpg",
+    "image_for_cart": "products/iphone13progreen_CzOM5fx.jpg"
+  }
+},
+{
+  "model": "products.productimage",
+  "pk": 4,
+  "fields": {
+    "product_item": 3,
+    "image_original": "products/iPhone_13_Pro_Sierra_Blue.webp",
+    "image_detail": "products/iPhone_13_Pro_Sierra_Blue.jpg",
+    "image_big": "products/iPhone_13_Pro_Sierra_Blue_UYYQh1a.jpg",
+    "image_middle": "products/iPhone_13_Pro_Sierra_Blue_nH3a3lQ.jpg",
+    "image_presmall": "products/iPhone_13_Pro_Sierra_Blue_eQRPrDn.jpg",
+    "image_small": "products/iPhone_13_Pro_Sierra_Blue_PGDD9kM.jpg",
+    "image_for_cart": "products/iPhone_13_Pro_Sierra_Blue_xNdH5Nc.jpg"
+  }
+},
+{
+  "model": "wishlists.wishedproduct",
+  "pk": 1,
+  "fields": {
+    "client": 1,
+    "product": 4,
+    "created": "2022-12-30T13:09:50.523Z"
+  }
+}
+]

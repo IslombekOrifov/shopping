@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}FAQ | Electro - Responsive Website Template{% endblock %}
+
+{% block content %}
+    <!-- ========== MAIN CONTENT ========== -->
+    <main id="content" role="main">
+        <!-- breadcrumb -->
+        <div class="bg-gray-13 bg-md-transparent">
+            <div class="container">
+                <!-- breadcrumb -->
+                <div class="my-md-3">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb mb-3 flex-nowrap flex-xl-wrap overflow-auto overflow-xl-visble">
+                            <li class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1"><a href="{% url 'general:index' %}">Home</a></li>
+                            <li class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1 active" aria-current="page">FAQ</li>
+                        </ol>
+                    </nav>
+                </div>
+                <!-- End breadcrumb -->
+            </div>
+        </div>
+        <!-- End breadcrumb -->
+
+        <div class="container">
+            <div class="mb-12 text-center">
+                <h1>Frequently Asked Questions</h1>
+            </div>
+
+            <!-- Basics Accordion -->
+            <div id="basicsAccordion" class="mb-12">
+                <!-- Card -->
+                {% for faq in faqs %}
+                    <div class="card mb-3 border-top-0 border-left-0 border-right-0 border-color-1 rounded-0">
+                        <div class="card-header card-collapse bg-transparent-on-hover border-0" id="basicsHeadingOne">
+                            <h5 class="mb-0">
+                                <button type="button" class="px-0 btn btn-link btn-block d-flex justify-content-between card-btn py-3 font-size-25 border-0"
+                                    data-toggle="collapse"
+                                    data-target="#basicsCollapseOner"
+                                    aria-expanded="true"
+                                    aria-controls="basicsCollapseOner">
+                                    {{ faq.question }}
+
+                                    <span class="card-btn-arrow">
+                                        <i class="fas fa-chevron-down text-gray-90 font-size-18"></i>
+                                    </span>
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="basicsCollapseOner" class="collapse show"
+                            aria-labelledby="basicsHeadingOne"
+                            data-parent="#basicsAccordion">
+                            <div class="card-body pl-0 pb-8">
+                                <p class="mb-0">{{ faq.answer }}</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                <!-- End Card -->
+            </div>
+            <!-- End Basics Accordion -->
+        </div>
+    </main>
+    <!-- ========== END MAIN CONTENT ========== -->
+{% endblock %}
+        

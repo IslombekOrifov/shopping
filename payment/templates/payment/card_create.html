@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% load i18n %}
+{% load widget_tweaks %}
+
+{% block title %}{% translate 'Log in' %}{% endblock title %}
+
+{% block content %}
+    <!-- ========== MAIN CONTENT ========== -->
+    <main id="content" role="main">
+        <!-- breadcrumb -->
+        <div class="bg-gray-13 bg-md-transparent">
+            <div class="container">
+                <!-- breadcrumb -->
+                <div class="my-md-3">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb mb-3 flex-nowrap flex-xl-wrap overflow-auto overflow-xl-visble">
+                            <li class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1"><a href="{% url 'general:index' %}">{% translate 'Home' %}</a></li>
+                            <li class="breadcrumb-item flex-shrink-0 flex-xl-shrink-1 active" aria-current="page">{% translate 'Payment' %}</li>
+                        </ol>
+                    </nav>
+                </div>
+                <!-- End breadcrumb -->
+            </div>
+        </div>
+        <!-- End breadcrumb -->
+
+        <div class="container">
+            <div class="mb-4">
+                <h1 class="text-center">{% translate 'Payment' %}</h1>
+            </div>
+            <div class="my-4 my-xl-8">
+                <div class="row">
+                    <div class="col-md-5 ml-md-auto ml-xl-auto mr-xl-auto">
+                        <!-- Title -->
+                        <div class="border-bottom border-color-1 mb-6">
+                            <h3 class="d-inline-block section-title mb-0 pb-2 font-size-26">{% translate 'Payment' %}
+                        <p class="text-gray-90 mb-4">To'lov amalga oshirish uchun kartangizni kiriting!</p>
+                        <!-- End Title -->
+                        <form class="js-validate" novalidate="novalidate" method='post'>
+                            <!-- Form Group -->
+                            {% csrf_token %}
+                            <div class="js-form-message form-group">
+                                {% if form.non_field_errors %}
+                                <div id="error" class="invalid-feedback" style="display: block;"><p class="invalid-feedback mb-4">{{form.non_field_errors}}</p></div>
+                                {% endif %}
+                                <label class="form-label" for="id_card_number">Karta raqami
+                                    <span class="text-danger">*</span>
+                                </label>                              
+                                {% render_field form.card_number type="number" class="form-control"  placeholder="1111222233334444" aria-label="Username or Email address" data-msg="Please enter a valid card number." data-error-class="u-has-error" data-success-class="u-has-success" %}
+                                {% if form.card_number.errors %}<div id="id_card_number-error" class="invalid-feedback" style="display: block;">{{ form.card_number.errors }}</div>{% endif %}
+                            </div>
+                            <!-- End Form Group -->
+                            <!-- Form Group -->
+                            <div class="js-form-message form-group">
+                                <label class="form-label" for="id_password">Amal qilish muddati <span class="text-danger">*</span></label>
+                                {% render_field form.card_expire type="password" class="form-control" id="id_card_expire" placeholder="0122" aria-label="Password" data-msg="Your expire is invalid. Please try again." data-error-class="u-has-error" data-success-class="u-has-success"%}
+                                {% if form.card_expire.errors %}<div id="id_card_expire-error" class="invalid-feedback" style="display: block;">{{ form.card_expire.errors }}</div>{% endif %}
+                                
+                            </div>
+                            <!-- End Form Group -->
+
+                            <!-- Button -->
+                            <div class="mb-1">
+                                <div class="mb-3">
+                                    <button type="submit" class="btn btn-primary-dark-w px-5">{% translate 'Continue' %}</button>
+                                </div>
+                            </div>
+                            <!-- End Button -->
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- ========== END MAIN CONTENT ========== -->
+
+{% endblock content %}
+
