@@ -1,0 +1,13 @@
+asgiref==3.5.2
+braintree==4.17.1
+Django==4.1.4
+django-adminlte-3==0.1.6
+django-ckeditor==6.5.1
+django-colorfield==0.7.2
+django-resized==1.0.2
+django-widget-tweaks==1.4.12
+django_debug_toolbar==3.8.1
+Pillow==9.3.0
+six==1.16.0
+sqlparse==0.4.3
+
