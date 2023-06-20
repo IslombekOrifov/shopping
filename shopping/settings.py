@@ -140,23 +140,23 @@ WSGI_APPLICATION = 'shopping.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql', 
-        'NAME': 'shoppingdjango$default',
-        'USER': 'shoppingdjango',
-        'PASSWORD': 'admin12345',
-        'HOST': 'shoppingdjango.mysql.pythonanywhere-services.com',   # Or an IP Address that your DB is hosted on
-        # 'PORT': '3306',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql', 
+#         'NAME': 'shoppingdjango$default',
+#         'USER': 'shoppingdjango',
+#         'PASSWORD': 'admin12345',
+#         'HOST': 'shoppingdjango.mysql.pythonanywhere-services.com',   # Or an IP Address that your DB is hosted on
+#         # 'PORT': '3306',
+#     }
+# }
 
 
 # authentication Backends
