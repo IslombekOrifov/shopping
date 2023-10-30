@@ -213,7 +213,7 @@
                     <tr>
                       <td>{{ items.author }}</td>
                       <td>{{ items.who_updated }}</td>
-                      <td>{{ items.title }}</td>
+                      <td>{{ items.title| }}</td>
                       <td>{{ items.model }}</td>
                       <td>{{ items.price }}</td>
                       <td>{{ items.count_in_stock }}</td>
@@ -225,6 +225,7 @@
                           <a class="btn btn-info btn-sm" href="#">
                               <i class="fas fa-pencil-alt"></i>Edit
                           </a>
+
                           <a class="btn btn-danger btn-sm" href="#">
                               <i class="fas fa-trash"></i>Delete
                           </a>

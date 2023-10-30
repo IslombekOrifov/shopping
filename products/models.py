@@ -17,7 +17,7 @@ class CreatedUpdateBase(models.Model):
     class Meta:
         abstract = True
 
-    
+
 class Category(CreatedUpdateBase):
     title = models.CharField(max_length=50, unique=True)
     slug = models.SlugField(max_length=50, unique=True)

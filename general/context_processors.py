@@ -4,7 +4,7 @@ from products.models import Category
 from general.models import Currency, Contact
 
 def index(request):
-    categories = Category.objects.filter(active=True, parent_id=None)
+    categories = Category.objects.filter(active=True, parent__isnull=True)
     currency_items = Currency.objects.values('code')
     contact = Contact.objects.filter(is_active=True).values('address', 'info_email', 'phone', 'phone2')[:1]
     currency = request.session.get(settings.CURRENCY_SESSION_ID)
