@@ -118,7 +118,7 @@ class ProductItem(CreatedUpdateBase):
 
 
 class ProductItemHistory(models.Model):
-    author = models.ForeignKey(CustomUser, related_name='product_items', on_delete=models.SET_NULL, blank=True, null=True)
+    author = models.ForeignKey(CustomUser, related_name='product_items_histories', on_delete=models.SET_NULL, blank=True, null=True)
     author_data = models.ForeignKey(CustomUser, on_delete=models.PROTECT, blank=True, null=True)
     product_item = models.ForeignKey(ProductItem, related_name='product_item_histories', on_delete=models.PROTECT)
     quantity = models.PositiveSmallIntegerField(default=1)

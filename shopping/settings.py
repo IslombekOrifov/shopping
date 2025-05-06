@@ -14,14 +14,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-znoqu+(!48o+&x7##!ls$x7os49q-7jsais+z6@=5zgbdyqwv0'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
-    '.pythonanywhere.com'
     '127.0.0.1',
 ]
 
-CSRF_TRUSTED_ORIGINS = [".pythonanywhere.com"]
+CSRF_TRUSTED_ORIGINS = ["https://ecom.pythonanywhere.com"]
 
 # Application definition
 
@@ -220,7 +219,7 @@ CART_SESSION_LIFE_TIME = 900
 WISHLIST_SESSION_ID = 'wishlist'
 
 CURRENCY_SESSION_ID = 'currency'
-CURRENCY_DEFAULT = 'UZS'
+CURRENCY_DEFAULT = 'usd'
 
 
 # Static files (CSS, JavaScript, Images)

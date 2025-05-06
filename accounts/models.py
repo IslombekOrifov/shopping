@@ -26,7 +26,7 @@ class CustomUser(AbstractUser):
     last_name = models.CharField(max_length=50)
     email = models.EmailField(unique=True, db_index=True)
     terms = models.BooleanField(default=True, db_index=True)
-    currency = models.ForeignKey(Currency, default=get_default_currency, on_delete=models.PROTECT)
+    currency = models.ForeignKey(Currency, on_delete=models.PROTECT, blank=True, null=True) #default=get_default_currency,
     role = models.CharField(max_length=2, choices=CHOICE_ROLE, default=CHOICE_ROLE[0][0], db_index=True)
     company = models.ForeignKey("company.Company", related_name='workers', blank=True, null=True, on_delete=models.SET_NULL)
 
